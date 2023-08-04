@@ -1,16 +1,15 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
+// defineProps({
+//   provider: {
+//     type: Object,
+//     required: true
+//   }
+// })
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+  <div class="single-provider">
     <h3>
       This is a single instance of a provider component that will go into a list
     </h3>
@@ -21,10 +20,11 @@ defineProps({
 <!-- 
     
 what needs to go in here: 
-- provider photo ???
+- provider photo OR provider type icon
 - provider name
 - provider type
-- aggregate score? 
+- aggregate score
 - address / contact info
+- NPI number
 
 -->

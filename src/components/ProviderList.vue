@@ -1,16 +1,15 @@
 <script setup>
 import ProviderListItem from '../components/ProviderListItem.vue';
-defineProps({
-    msg: {
-        type: String,
-        required: true
-    }
-})
+// defineProps({
+//     providers: {
+//         type: Array,
+//         required: true
+//     }
+// })
 </script>
 
 <template>
-    <div class="greetings">
-        <h1 class="green">{{ msg }}</h1>
+    <div class="provider-list">
         <h3>
         This is a list of all providers that have been reviewed
         </h3>
@@ -21,12 +20,13 @@ defineProps({
 <!-- 
     
 what needs to go in here: 
-- provider photo ???
+- provider photo OR icon representing provider type
 - provider name
 - provider type
 - aggregate score
 - address / contact info
 - licenses
+- NPI number
 - ReviewList component - maybe? 
 
 -->
