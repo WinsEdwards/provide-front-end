@@ -13,3 +13,9 @@
   }
 }
 </style>
+
+<!-- 
+what needs to go in here: 
+- Creator component (one for each, contains deets about each creator)
+- nav bar 
+-->

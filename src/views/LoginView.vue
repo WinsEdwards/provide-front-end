@@ -5,15 +5,12 @@ import TheWelcome from '../components/TheWelcome.vue'
 <template>
   <main>
     <TheWelcome />
-    <h1>This is the home page</h1>
+    <h1>This is the login page</h1>
   </main>
 </template>
 
 <!-- 
 what needs to go in here: 
-- header
-- nav bar 
-- link to:
-- login page
-- search bar 
+- login component
+- logo? 
 -->
