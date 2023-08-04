@@ -1,16 +1,16 @@
 <script setup>
-import ReviewList from '../components/ReviewList.vue'
+import ReviewsList from "../components/ReviewsList.vue"
 </script>
 
 <template>
     <main>
         <h1>This is the user page</h1>
         <p> this review list shows reviews written by user</p>
-        <ReviewList></ReviewList>
+        <ReviewsList></ReviewsList>
 
         <button>Show liked reviews</button>
         <p> this review list shows reviews liked by user</p>
-        <ReviewList></ReviewList>
+        <ReviewsList></ReviewsList>
 
     </main>
 </template>

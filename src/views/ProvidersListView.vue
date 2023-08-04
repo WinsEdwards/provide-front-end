@@ -8,8 +8,7 @@ import SearchBar from '../components/SearchBar.vue';
   <main>
     <h1>This is the provider page, will have a list of providers</h1>
     <SearchBar></SearchBar>
-    <RouterLink to="/providers/provider">Provider</RouterLink>
-    <SingleProviderList></SingleProviderList>
+    <ProviderListItem></ProviderListItem>
   </main>
 </template>
 

@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 defineProps({
   msg: {
     type: String,
@@ -13,6 +14,7 @@ defineProps({
     <h3>
       This is a single instance of a provider component that will go into a list
     </h3>
+    <RouterLink to="/providers/provider">Provider</RouterLink>
   </div>
 </template>
 
