@@ -1,15 +1,9 @@
 <script setup>
-defineProps({
-    msg: {
-        type: String,
-        required: true
-    }
-})
+// defineProps({})
 </script>
 
 <template>
     <div class="greetings">
-        <h1 class="green">{{ msg }}</h1>
         <h3>
             This is a single instance of a review carousel 
         </h3>

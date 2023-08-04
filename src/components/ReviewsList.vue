@@ -2,11 +2,11 @@
 import ReviewItem from "../components/ReviewItem.vue"
 import ReviewForm from "../components/ReviewForm.vue"
 defineProps({
-msg: {
-    type: String,
-    required: true
-}
-})
+// msg: {
+//     type: String,
+//     required: true
+// }
+// })
 </script>
 
 <template>

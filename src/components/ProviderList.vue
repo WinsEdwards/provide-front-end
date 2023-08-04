@@ -1,11 +1,11 @@
 <script setup>
 import ProviderListItem from '../components/ProviderListItem.vue';
-defineProps({
-    msg: {
-        type: String,
-        required: true
-    }
-})
+// defineProps({
+//     msg: {
+//         type: String,
+//         required: true
+//     }
+// })
 </script>
 
 <template>
