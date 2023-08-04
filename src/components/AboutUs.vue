@@ -22,10 +22,10 @@ defineProps({
 <template>
   <div class="about-us-container">
     <ul>
-      <li><img src="{{ team_img }}" alt="Digital artist's rendering of {{ team_mbr_name }}"></li>
+      <li><img src="{{ team_mbr_img }}" alt="Digital artist's rendering of {{ team_mbr_name }}"></li>
       <li>{{ team_mbr_name }}</li>
       <li>{{ team_mbr_pronouns }}</li>
-      <li>{{ team_bio }}</li>
+      <li>{{ team_mbr_bio }}</li>
     </ul>
   </div>
 </template>
