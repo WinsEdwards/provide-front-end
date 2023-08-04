@@ -13,6 +13,13 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <!-- Is there a way for login/logout to change depending on if user logged in or not? -->
+        <RouterLink to="/login">Login</RouterLink>
+        <RouterLink to="/login">Logout</RouterLink>
+        <RouterLink to="/search">Search</RouterLink>
+        <RouterLink to="/user">Account</RouterLink>
+        <RouterLink to="/providers">Providers</RouterLink>
+
       </nav>
     </div>
   </header>
