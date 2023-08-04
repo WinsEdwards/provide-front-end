@@ -1,4 +1,5 @@
 <script setup>
+import ReviewItem from "../components/ReviewItem.vue"
     defineProps({
     msg: {
         type: String,
@@ -11,8 +12,9 @@
     <div class="greetings">
         <h1 class="green">{{ msg }}</h1>
         <h3>
-            This is a single instance of the review list component
+            This is a single review instance
         </h3>
+        <ReviewItem></ReviewItem>
     </div>
 </template>
 
