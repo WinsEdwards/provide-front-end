@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  team_img: {
+  team_mbr_img: {
     type: String,
     required: false
   },
@@ -12,7 +12,7 @@ defineProps({
     type: String,
     required: true
   },
-  team_bio: {
+  team_mbr_bio: {
     type: String,
     required: true
   }
