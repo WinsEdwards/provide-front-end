@@ -1,20 +1,31 @@
 <script setup>
 defineProps({
-  team_imgs: {
-    type: Array,
+  team_img: {
+    type: String,
     required: false
+  },
+  team_mbr_name: {
+    type: String,
+    required: true
+  },
+  team_mbr_pronouns: {
+    type: String,
+    required: true
+  },
+  team_bio: {
+    type: String,
+    required: true
   }
 })
 </script>
 
 <template>
-  <div class="why-provide-container">
-    <h1>PRovIDE was created by and for trans and queer folks to help us find safe and affirming health care providers.</h1>
-  </div>
   <div class="about-us-container">
     <ul>
-      <li>This is a single instance of an about me for a team member</li>
-      <li>This is a single instance of an about me for a team member</li>
+      <li><img src="{{ team_img }}" alt="Digital artist's rendering of {{ team_mbr_name }}"></li>
+      <li>{{ team_mbr_name }}</li>
+      <li>{{ team_mbr_pronouns }}</li>
+      <li>{{ team_bio }}</li>
     </ul>
   </div>
 </template>
