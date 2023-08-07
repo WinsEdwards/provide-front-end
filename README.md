@@ -1,3 +1,7 @@
+Wishlist:
+- spinner on load for login/logout
+- popup message on successful logout
+- figure out how to get router working on store.js 
 # provide-front-end
 
 This template should help get you started developing with Vue 3 in Vite.

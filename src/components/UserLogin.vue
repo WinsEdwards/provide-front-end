@@ -1,40 +1,36 @@
 <script setup>
-import axios from "axios";
 import { store } from '../store';
+import { useRouter, useRoute } from 'vue-router'
 // variables
+const router = useRouter()
 const userData = {
     username:'',
     password : ''
 }
 
-// functions
-const doLogin = () => {
-    axios.post('http://localhost:5000/user/login', userData)
-    .then(response => {
-        console.log(response)
-        console.log(store)
-        store.toggleIsLoggedIn(true)
-        // console.log(store)
-    })
-    }
+const handleSubmit = () => {
+    store.doLogin(userData)
+    router.push('/')
+}
 
 </script>
 
 <template>
     <div login-form-container>
-        <form name="login-form" @submit.prevent="doLogin" >
+        <form name="login-form" @submit.prevent="handleSubmit" >
             <div class="mb-3">
                 <label for="username">Username: </label>
-                <input id="username" type="text" placeholder="username" v-model="userData.username" />
+                <input id="username" type="text" placeholder="username" v-model="userData.username" required/>
             </div>
             <div class="mb-3">
                 <label for="password">Password: </label>
-                <input id="password" type="password" placeholder="password" v-model="userData.password" />
+                <input id="password" type="password" placeholder="password" v-model="userData.password" required/>
             </div>
             <button class="btn btn-outline-dark" type="submit">
                 Login
             </button>
             <p>Don't have an account?<button><RouterLink to="/register">Register Here</RouterLink></button></p>
+            <p v-if="store.isResponseVisible"> {{ store.responseMessage }}</p>
         </form>
     </div>
 </template>
