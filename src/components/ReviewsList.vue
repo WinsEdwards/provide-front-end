@@ -1,7 +1,7 @@
 <script setup>
 import ReviewItem from "../components/ReviewItem.vue"
 import ReviewForm from "../components/ReviewForm.vue"
-defineProps({
+// defineProps({
 // msg: {
 //     type: String,
 //     required: true

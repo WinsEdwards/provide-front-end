@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 import ProviderListItem from '../components/ProviderListItem.vue';
 import SearchBar from '../components/SearchBar.vue';
 </script>
