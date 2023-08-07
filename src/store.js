@@ -15,7 +15,7 @@ export const store = reactive({
         axios.post('http://localhost:5000/user/register', userData)
         .then(response => {
             console.log(response)
-            // router.push({ name: 'home' })
+            router.push({ name: 'home' })
         })
         }
 })
