@@ -7,6 +7,7 @@ export const store = reactive({
     route : useRoute(),
     
     currentUser: null,
+    currentProvider: null,
     isLoggedIn: false,
 
     // login functionality
@@ -46,6 +47,15 @@ export const store = reactive({
         this.currentUser = null;
     },
 
+    createReview(reviewData) {
+        // axios.post($`http://localhost:5000/{currentProvider}/reviews`, currentUser)
+        // .then(response => {
+        // response})
+        // .catch((error) => {
+        //     this.createResponseMessage('Oh dear, that did not work...')
+        // })
+        console.log(reviewData)
+    },
 
     // error message functionality
 
