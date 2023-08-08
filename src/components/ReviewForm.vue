@@ -6,7 +6,7 @@ import { routerKey } from 'vue-router';
 
 // variables
 const reviewData = {
-    review: null,
+    description: null,
     rating: null,
     emojirating: null,
     recommended: null,
@@ -34,24 +34,25 @@ const handleSubmit = () => {
             <h3>Leave a review for {{ currentProvider }}:</h3>
             <br>
             <div>
-                <label for="review">Review: </label>      
-                <textarea id="review" v-model="reviewData.review" required></textarea>
+                <label for="description">Review: </label>      
+                <textarea id="description" v-model="reviewData.description" maxlength="4096" required></textarea>
             </div>
             <br>
             <div>
                 <label for="rating">Rating: </label>
                 <select id="rating" v-model.number="reviewData.rating" required>
-                    <option>5 ⭐s</option>
-                    <option>4 ⭐s</option>
-                    <option>3 ⭐s</option>
-                    <option>2 ⭐s</option>
-                    <option>1 ⭐</option>
+                    <option value=5>5 ⭐s</option>
+                    <option value=4>4 ⭐s</option>
+                    <option value=3>3 ⭐s</option>
+                    <option value=2>2 ⭐s</option>
+                    <option value=1>1 ⭐</option>
                 </select>
             </div>
             <br>
             <div>
+                <!-- consider accessibility of emoji selection -->
                 <label for="emoji-rating">Emoji Rating: </label>
-                <select id="emoji-rating" v-model.number="reviewData.emojirating" required>
+                <select id="emoji-rating" v-model="reviewData.emojirating" required>
                     <option>😍</option>
                     <option>👍</option>
                     <option>😐</option>
