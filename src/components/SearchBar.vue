@@ -4,29 +4,74 @@ import axios from 'axios'
 
 export default {
     setup() {
-        let searchTerm = ref('')
-        let providers = axios.get('https://jsonplaceholder.typicode.com/users')
+        // let searchTerms = reactive({
+        //     firstName: '',
+        //     lastName:'',
+        //     zipCode:''
+        // })
+        let firstName = ref('')
+        let lastName = ref('')
+        let zipCode = ref('')
+        // axios.get('https://npiregistry.cms.hhs.gov/api/?last_name=',{{searchTerm}},'&version=2.1')
+        let providers = 
+        [
+    {
+        "addr_practice_full": "123 Happy Street",
+        "firstName" : "John",
+        "lastName" : "Smith",
+        "zipCode" : 30076,
+        "licenses": "fun, happy, silly",
+        "name_full": "Happy Doctor Place",
+        "provider_id": 2,
+        "provider_type": "A type"
+    },
+    {
+        "addr_practice_full": "123 Sad Street",
+        "licenses": "sad, sad, sad",
+        "firstName" : "Jerry",
+        "lastName" : "Beck",
+        "zipCode" : 30069,
+        "name_full": "Sad Doctor Place",
+        "provider_id": 1,
+        "provider_type": "A sad type"
+    },
+    {
+        "addr_practice_full": "123 Mid Street",
+        "licenses": "mid, mid, mid",
+        "firstName" : "Jenny",
+        "lastName" : "Dallow",
+        "zipCode" : 30076,
+        "name_full": "Mid Doctor Place",
+        "provider_id": 4,
+        "provider_type": "A mid type"
+    }
+]
+        // axios.get('https://jsonplaceholder.typicode.com/users')
 
         const searchProviders = computed(() => {
-            if (searchTerm.value === '') {
+            if (firstName.value === '' && lastName.value === '' && zipCode.value === '') {
                 return []
             }
 
             let matches = 0
-
-            return users.filter(user => {
+            return providers.filter(provider => {
                 if (
-                user.name.toLowerCase().includes(searchTerm.value.toLowerCase())
+                (provider.firstName.toLowerCase().includes(firstName.value.toLowerCase()) ||
+                provider.lastName.toLowerCase().includes(lastName.value.toLowerCase()) || 
+                provider.zipCode.includes(zipCode.value))
                 && matches < 10
                 ) {
                 matches++
-                return user
+                return provider
                 }
             })
             });
         return {
-        searchTerm,
-        providers
+        firstName,
+        lastName,
+        zipCode,
+        providers,
+        searchProviders
         }
     }
 }
@@ -34,24 +79,27 @@ export default {
 
 <template>
     <div class="greetings">
-        <p>search box</p>
-        <!-- <h1 class="green">{{ msg }}</h1>
         <label for="search">
             Type the name of a country to search
         </label>
 
-        <input type="text" id="search" placeholder="Type here..." v-model="searchTerm">
+        <input type="text" id="search" placeholder="First Name" v-model="firstName">
+        <input type="text" id="search" placeholder="Last Name" v-model="lastName">
+        <input type="text" id="search" placeholder="Zip Code" v-model="zipCode">
+        
         <ul v-if="searchProviders.length">
-            <li>
+            <!-- <li>
                 Showing {{ searchProviders.length }} of {{ providers.length }} results
-            </li>
+            </li> -->
             <li
                 v-for="provider in searchProviders"
-                :key="provider.name"
+                :key="provider.firstName"
             >
-                {{ provider.name }}
+                {{ provider.firstName }}
+                {{ provider.lastName }}
+                {{ provider.addr_practice_full }}
             </li>
-            </ul> -->
+            </ul>
     </div>
 </template>
 
