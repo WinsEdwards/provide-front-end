@@ -48,9 +48,9 @@ export const store = reactive({
     },
 
     createReview(reviewData) {
-        reviewData['author_id'] = this.currentUser.user_id
-        console.log(reviewData)
-        axios.post('https://provide-api.onrender.com/providers/{{ currentProvider }}/reviews')
+        reviewData['author_id'] = this.currentUser
+        console.log("hey, what's going on", reviewData)
+        axios.post(`https://provide-api.onrender.com/providers/${this.currentProvider}/reviews`, reviewData)
         .then(response => {
         response})
         .catch((error) => {

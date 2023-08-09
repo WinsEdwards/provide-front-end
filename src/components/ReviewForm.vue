@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { store } from '../store';
 import { routerKey } from 'vue-router';
-// import currentUser from '../store';
+// import currentProvider from '../store';
 
 // variables
 const reviewData = {
