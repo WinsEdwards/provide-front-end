@@ -6,9 +6,9 @@ export const store = reactive({
     router : useRouter(),
     route : useRoute(),
     
-    currentUser: null,
-    currentProvider: null,
-    isLoggedIn: false,
+    currentUser: 1,
+    currentProvider: 2,
+    isLoggedIn: true,
 
     // login functionality
 
@@ -48,13 +48,15 @@ export const store = reactive({
     },
 
     createReview(reviewData) {
-        // axios.post($`http://localhost:5000/{currentProvider}/reviews`, currentUser)
-        // .then(response => {
-        // response})
-        // .catch((error) => {
-        //     this.createResponseMessage('Oh dear, that did not work...')
-        // })
+        reviewData['author_id'] = this.currentUser.user_id
         console.log(reviewData)
+        axios.post('https://provide-api.onrender.com/providers/{{ currentProvider }}/reviews')
+        .then(response => {
+        response})
+        .catch((error) => {
+            this.createResponseMessage('Oh dear, that did not work...')
+        })
+        console.log('post axios attempt:', reviewData)
     },
 
     // error message functionality

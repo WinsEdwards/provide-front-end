@@ -8,7 +8,7 @@ import { routerKey } from 'vue-router';
 const reviewData = {
     description: null,
     rating: null,
-    emojirating: null,
+    emoji_rating: null,
     recommended: null,
     usercomfort: null,
     provcomfort: null,
@@ -52,7 +52,7 @@ const handleSubmit = () => {
             <div>
                 <!-- consider accessibility of emoji selection -->
                 <label for="emoji-rating">Emoji Rating: </label>
-                <select id="emoji-rating" v-model="reviewData.emojirating" required>
+                <select id="emoji-rating" v-model="reviewData.emoji_rating" required>
                     <option>😍</option>
                     <option>👍</option>
                     <option>😐</option>
@@ -62,7 +62,7 @@ const handleSubmit = () => {
             </div>
             <br>    
             <h3>Please answer a few quick questions to help others:</h3>
-            <!-- note: this section needs to be built into backend if Maz likes -->
+            <!-- note: change y/n values to true/false where possible -->
             <ul>
                 <li>
                     <label for="recommended">Would you recommend this provider to a friend? </label>
@@ -86,10 +86,11 @@ const handleSubmit = () => {
                     </select>       
                 </li>           
                 <li>
-                    <label for="staff-comfort">Did the support staff (i.e. nurses, dental hygienists, schedulers and front desk staff) seem comfortable treating and/or interacting with you? </label>
+                    <label for="staff-comfort">If applicable, did the support staff (i.e. nurses, dental hygienists, schedulers and front desk staff) seem comfortable treating and/or interacting with you? </label>
                     <select id="staff-comfort" v-model="reviewData.staffcomfort" required>
                         <option value=1>Yes</option>
                         <option value=0>No</option>
+                        <option value=99>Not applicable</option>
                     </select>       
                 </li>
                 <li>
