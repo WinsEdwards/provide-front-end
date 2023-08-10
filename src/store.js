@@ -1,19 +1,15 @@
 import {reactive} from 'vue';
 import axios from 'axios';
-import { useRouter, useRoute } from 'vue-router'
 // variables
 export const store = reactive({
-    router : useRouter(),
-    route : useRoute(),
-    
-    currentUser: 1,
-    currentProvider: 2,
-    isLoggedIn: true,
+    currentUser: null,
+    currentProvider: null,
+    isLoggedIn: false,
 
     // login functionality
 
     doRegister(userData) {
-        axios.post('http://localhost:5000/user/register', userData)
+        axios.post('https://provide-api.onrender.com/user/register', userData)
         .then(response => {
             response
         }).catch((error) => {
@@ -27,9 +23,11 @@ export const store = reactive({
         },
 
     doLogin(userData) {
-        axios.post('http://localhost:5000/user/login', userData)
+        console.log(userData)
+        axios.post('https://provide-api.onrender.com/user/login', userData)
     .then(response => {
-            this.currentUser = response.data.user.user_id
+            this.currentUser = response.data.user
+            console.log(this.currentUser)
             this.isLoggedIn = true
         }).catch((error) => {
             console.log(error)
@@ -59,6 +57,13 @@ export const store = reactive({
         console.log('post axios attempt:', reviewData)
     },
 
+    // search functionality 
+
+    getProviders(searchData) {
+        console.log(searchData)
+        axios.get('http://localhost:5000/provider-search', searchData)
+        .then(response => response)
+    },
     // error message functionality
 
     responseMessage: null,

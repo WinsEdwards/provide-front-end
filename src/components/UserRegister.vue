@@ -13,8 +13,10 @@ const userData = {
 
 // functions 
 const handleSubmit = () => {
-    store.doRegister(userData)
-    router.push('/')
+    store.doRegister(userData) 
+    if (store.currentUser != null) {
+        router.push('/login')
+    }
 }
 
 </script>

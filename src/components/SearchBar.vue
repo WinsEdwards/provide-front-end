@@ -1,3 +1,42 @@
+<script setup>
+import {ref, computed} from 'vue'
+import axios from 'axios'
+import { store } from '../store';
+
+const searchData = {
+    firstName : '',
+    lastName : '',
+    zipCode : ''
+    
+}
+let providers = ref('')
+
+const handleSearch = () => {
+    console.log(searchData)
+    store.getProviders(searchData)
+}
+
+
+        
+</script>
+
+<template>
+    <div class="greetings">
+        <form name="search-form" @submit.prevent="handleSearch">
+        <label for="search">
+            Type the name of a country to search
+        </label>
+
+        <input type="text" id="search" placeholder="First Name" v-model="searchData.firstName" required>
+        <input type="text" id="search" placeholder="Last Name" v-model="searchData.lastName" required>
+        <input type="text" id="search" placeholder="Zip Code" v-model="searchData.zipCode">
+        
+        <button type="submit">search</button>
+        </form>
+    </div>
+</template>
+
+<!-- 
 <script>
 import {ref, computed} from 'vue'
 import axios from 'axios'
@@ -88,12 +127,12 @@ export default {
         <input type="text" id="search" placeholder="Zip Code" v-model="zipCode">
         
         <ul v-if="searchProviders.length">
-            <!-- <li>
+            <li>
                 Showing {{ searchProviders.length }} of {{ providers.length }} results
-            </li> -->
+            </li>
             <li
                 v-for="provider in searchProviders"
-                :key="provider.firstName"
+                :key="provider.provider_id"
             >
                 {{ provider.firstName }}
                 {{ provider.lastName }}
@@ -101,12 +140,4 @@ export default {
             </li>
             </ul>
     </div>
-</template>
-
-<!-- 
-what needs to go in here: 
-- search field
-- search button
-- filter by dropdown
-
--->
+</template> -->
