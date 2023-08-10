@@ -4,6 +4,7 @@ import axios from 'axios';
 export const store = reactive({
     currentUser: null,
     currentProvider: null,
+    review_ID: null,
     isLoggedIn: false,
     currentProvidersList: null,
 
@@ -46,6 +47,18 @@ export const store = reactive({
         this.currentUser = null;
     },
 
+    toggleLike() {
+        // still need to set review_ID somewhere
+        axios.patch(`https://provide-api.onrender.com/reviews/${this.review_ID}`)
+              .then(response => {
+                response
+                  })
+              .catch((error) => {
+                console.log(error);
+              });
+            }
+    },
+    
     createReview(reviewData) {
         reviewData['author_id'] = this.currentUser
         console.log("hey, what's going on", reviewData)
@@ -68,7 +81,7 @@ export const store = reactive({
     },
     
     getReviewsForUser() {
-        axios.get(`https://provide-api.onrender.com/providers/${this.currentUser}/reviews`)
+        axios.get(`https://provide-api.onrender.com/user/${this.currentUser}/reviews`)
         .then(response => { 
             const reviews = response.data})
         .catch((error) => {
