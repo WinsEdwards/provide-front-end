@@ -12,7 +12,7 @@ const searchData = {
 let providers = ref('')
 
 const handleSearch = () => {
-    console.log(searchData)
+    // console.log(searchData)
     store.getProviders(searchData)
 }
 
@@ -33,6 +33,7 @@ const handleSearch = () => {
         
         <button type="submit">search</button>
         </form>
+        <p>{{ store.currentProvidersList }}</p>
     </div>
 </template>
 
