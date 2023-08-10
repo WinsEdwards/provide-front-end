@@ -5,6 +5,7 @@ export const store = reactive({
     currentUser: null,
     currentProvider: null,
     isLoggedIn: false,
+    currentProvidersList: null,
 
     // login functionality
 
@@ -61,8 +62,8 @@ export const store = reactive({
 
     getProviders(searchData) {
         console.log(searchData)
-        axios.get('http://localhost:5000/provider-search', searchData)
-        .then(response => response)
+        axios.post('http://127.0.0.1:5000/providers/provider-search', searchData)
+        .then(response => this.currentProvidersList = response.data)
     },
     // error message functionality
 
