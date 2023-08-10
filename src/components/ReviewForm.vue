@@ -2,7 +2,6 @@
 import axios from 'axios';
 import { store } from '../store';
 import { routerKey } from 'vue-router';
-// import currentProvider from '../store';
 
 // variables
 const reviewData = {
@@ -31,7 +30,7 @@ const handleSubmit = () => {
     <div class="review-form-contain">
 
         <form class="review-form" @submit.prevent="handleSubmit">
-            <h3>Leave a review for {{ currentProvider }}:</h3>
+            <h3>Leave a review for {{ store.currentProvider }}:</h3>
             <br>
             <div>
                 <label for="description">Review: </label>      
@@ -54,9 +53,12 @@ const handleSubmit = () => {
                 <label for="emoji-rating">Emoji Rating: </label>
                 <select id="emoji-rating" v-model="reviewData.emoji_rating" required>
                     <option>😍</option>
+                    <option>❤️</option>
                     <option>👍</option>
-                    <option>😐</option>
-                    <option>☹️</option>
+                    <option>🤷</option>
+                    <option>☠️</option>
+                    <option>🤢</option>
+                    <option>😭</option>
                     <option>😡</option>
                 </select>
             </div>
