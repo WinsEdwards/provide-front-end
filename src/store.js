@@ -57,6 +57,24 @@ export const store = reactive({
         console.log('post axios attempt:', reviewData)
     },
 
+    getReviewsForProvider() {
+        axios.get(`https://provide-api.onrender.com/providers/${this.currentProvider}/reviews`)
+        .then(response => { 
+            const reviews = response.data})
+        .catch((error) => {
+            this.createResponseMessage('Oh dear, that did not work...')
+        })
+    },
+    
+    getReviewsForUser() {
+        axios.get(`https://provide-api.onrender.com/providers/${this.currentUser}/reviews`)
+        .then(response => { 
+            const reviews = response.data})
+        .catch((error) => {
+            this.createResponseMessage('Oh dear, that did not work...')
+        })
+    },
+
     // search functionality 
 
     getProviders(searchData) {

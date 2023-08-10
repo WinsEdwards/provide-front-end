@@ -1,6 +1,7 @@
 <script setup>
 import ReviewItem from "../components/ReviewItem.vue"
 import ReviewForm from "../components/ReviewForm.vue"
+import { store } from '../store';
 // defineProps({
 // reviews: {
 //     type: Array,
@@ -15,7 +16,6 @@ import ReviewForm from "../components/ReviewForm.vue"
         <h3>
             This will contain a bunch of review items
         </h3>
-        <ReviewItem></ReviewItem>
         <ReviewForm></ReviewForm>
     </div>
 </template>
