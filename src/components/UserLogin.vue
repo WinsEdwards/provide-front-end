@@ -8,9 +8,13 @@ const userData = {
     password : ''
 }
 
+// login button has to be clicked twice for login to take us to home page
 const handleSubmit = () => {
     store.doLogin(userData)
-    router.push('/')
+    if (store.currentUser != null) {
+        router.push('/')
+    }
+    
 }
 
 </script>

@@ -17,7 +17,7 @@ import { store } from './store'
         <RouterLink to="/providers">Providers</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/user" v-if="store.isLoggedIn">Account</RouterLink>
-        <button v-if="store.isLoggedIn" @click="store.doLogout()">Logout</button>
+        <button v-if="store.isLoggedIn" @click="store.doLogout()"><RouterLink to ="/login">Logout</RouterLink></button>
         <!-- Is there a way for login/logout to change depending on if user logged in or not? -->
         <RouterLink to="/login" v-else>Login</RouterLink>
         <!-- <RouterLink to="/register">Register</RouterLink> -->
