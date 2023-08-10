@@ -2,13 +2,13 @@
 import axios from 'axios';
 import { store } from '../store';
 import { routerKey } from 'vue-router';
-// import currentUser from '../store';
+// import currentProvider from '../store';
 
 // variables
 const reviewData = {
-    review: null,
+    description: null,
     rating: null,
-    emojirating: null,
+    emoji_rating: null,
     recommended: null,
     usercomfort: null,
     provcomfort: null,
@@ -34,24 +34,25 @@ const handleSubmit = () => {
             <h3>Leave a review for {{ currentProvider }}:</h3>
             <br>
             <div>
-                <label for="review">Review: </label>      
-                <textarea id="review" v-model="reviewData.review" required></textarea>
+                <label for="description">Review: </label>      
+                <textarea id="description" v-model="reviewData.description" maxlength="4096" required></textarea>
             </div>
             <br>
             <div>
                 <label for="rating">Rating: </label>
                 <select id="rating" v-model.number="reviewData.rating" required>
-                    <option>5 ⭐s</option>
-                    <option>4 ⭐s</option>
-                    <option>3 ⭐s</option>
-                    <option>2 ⭐s</option>
-                    <option>1 ⭐</option>
+                    <option value=5>5 ⭐s</option>
+                    <option value=4>4 ⭐s</option>
+                    <option value=3>3 ⭐s</option>
+                    <option value=2>2 ⭐s</option>
+                    <option value=1>1 ⭐</option>
                 </select>
             </div>
             <br>
             <div>
+                <!-- consider accessibility of emoji selection -->
                 <label for="emoji-rating">Emoji Rating: </label>
-                <select id="emoji-rating" v-model.number="reviewData.emojirating" required>
+                <select id="emoji-rating" v-model="reviewData.emoji_rating" required>
                     <option>😍</option>
                     <option>👍</option>
                     <option>😐</option>
@@ -61,7 +62,7 @@ const handleSubmit = () => {
             </div>
             <br>    
             <h3>Please answer a few quick questions to help others:</h3>
-            <!-- note: this section needs to be built into backend if Maz likes -->
+            <!-- note: change y/n values to true/false where possible -->
             <ul>
                 <li>
                     <label for="recommended">Would you recommend this provider to a friend? </label>
@@ -85,10 +86,11 @@ const handleSubmit = () => {
                     </select>       
                 </li>           
                 <li>
-                    <label for="staff-comfort">Did the support staff (i.e. nurses, dental hygienists, schedulers and front desk staff) seem comfortable treating and/or interacting with you? </label>
+                    <label for="staff-comfort">If applicable, did the support staff (i.e. nurses, dental hygienists, schedulers and front desk staff) seem comfortable treating and/or interacting with you? </label>
                     <select id="staff-comfort" v-model="reviewData.staffcomfort" required>
                         <option value=1>Yes</option>
                         <option value=0>No</option>
+                        <option value=99>Not applicable</option>
                     </select>       
                 </li>
                 <li>

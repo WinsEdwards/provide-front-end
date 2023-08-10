@@ -46,13 +46,15 @@ export const store = reactive({
     },
 
     createReview(reviewData) {
-        // axios.post($`http://localhost:5000/{currentProvider}/reviews`, currentUser)
-        // .then(response => {
-        // response})
-        // .catch((error) => {
-        //     this.createResponseMessage('Oh dear, that did not work...')
-        // })
-        console.log(reviewData)
+        reviewData['author_id'] = this.currentUser
+        console.log("hey, what's going on", reviewData)
+        axios.post(`https://provide-api.onrender.com/providers/${this.currentProvider}/reviews`, reviewData)
+        .then(response => {
+        response})
+        .catch((error) => {
+            this.createResponseMessage('Oh dear, that did not work...')
+        })
+        console.log('post axios attempt:', reviewData)
     },
 
     // search functionality 
