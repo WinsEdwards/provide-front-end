@@ -20,6 +20,7 @@ const reviewData = {
 
 // functions
 const handleSubmit = () => {
+    console.log("submitting review")
     store.createReview(reviewData)
 }
 
@@ -30,7 +31,7 @@ const handleSubmit = () => {
     <div class="review-form-contain">
 
         <form class="review-form" @submit.prevent="handleSubmit">
-            <h3>Leave a review for {{ store.currentProvider }}:</h3>
+            <h3>Leave a review for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:</h3>
             <br>
             <div>
                 <label for="description">Review: </label>      

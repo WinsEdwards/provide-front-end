@@ -1,5 +1,4 @@
 <script setup>
-import ReviewCarousel from '../components/ReviewCarousel.vue';
 import SearchBar from '../components/SearchBar.vue'
 </script>
 
@@ -7,7 +6,6 @@ import SearchBar from '../components/SearchBar.vue'
   <main>
     <h1>Welcome to Provide!</h1>
     <SearchBar></SearchBar>
-    <ReviewCarousel></ReviewCarousel>
   </main>
 </template>
 
