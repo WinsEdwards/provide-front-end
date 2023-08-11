@@ -9,8 +9,8 @@ reviews: {
 }})
 
 //functions
-const handleClick = () => {
-    store.toggleLike()
+const handleClick = (reviewData) => {
+    store.toggleLike(reviewData)
 }
 </script>
 
@@ -31,7 +31,9 @@ const handleClick = () => {
             Recommended to a friend?
             {{ review.recommended ? 'Yes' : 'No' }}
             <br>
-            <button type="button" class="ReviewLikeCount" @click="handleClick">+</button>{{ review.liked_count }}
+            <!--  -->
+            <div v-if="store.isLiked === false"><button type="button" class="ReviewLikeCount" @click="handleClick(review)" >+</button>{{ review.liked_count }}</div>
+            <button type="button" class="ReviewLikeCount" @click="handleClick(review)" v-else>-</button>
             </li>
         </ul>
     </div>

@@ -7,7 +7,7 @@ import ProviderList from '../components/ProviderList.vue'
 <template>
   <main>
     <h1>Select a provider from the list below!</h1>
-    <SearchBar></SearchBar>
+    <SearchBar key="providersList"></SearchBar>
     <ProviderList></ProviderList>
     
   </main>

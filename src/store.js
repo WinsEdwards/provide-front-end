@@ -22,6 +22,7 @@ export const store = reactive({
     userReviews: [],
     userLikedReviews: [],
     currentProvidersListFromDatabase: null,
+    isLiked: false,
 
     // login functionality
 
@@ -46,15 +47,40 @@ export const store = reactive({
         this.currentUser = null;
     },
 
-    toggleLike() {
-        // still need to set review_ID somewhere
-        axios.patch(`https://provide-api.onrender.com/reviews/${this.review_ID}`)
+    // like a review 
+
+    async toggleLike(reviewData) {
+        const review_id = reviewData.review_id
+        const requestData = {"user_id" : this.currentUser.user_id}
+        // console.log(this.currentUser.liked_reviews)
+        await axios.patch(`http://127.0.0.1:5000/reviews/${review_id}`, requestData)
             .then(response => {
-            response})
+            console.log(this.isLiked)
+            this.getUpdatedUser()
+            console.log(this.isLiked)
+            })
             .catch((error) => {
-            console.log(error);
+            
             });
         },
+    
+    getUpdatedUser() {
+        axios.get(`http://127.0.0.1:5000/user/${this.currentUser.user_id}`)
+        .then(response => {
+            this.currentUser = response.data
+            }
+            )
+        
+    },
+
+    // updateLiked() {
+    //     if (this.currentUser.liked_reviews && this.currentUser.liked_reviews.includes(review_id)) {
+    //         this.isLiked = false
+    //     } else {
+    //         this.isLiked = true
+    //     }
+    // },
+
     
     createReview(reviewData) {
         reviewData['author_id'] = this.currentUser['user_id']
@@ -92,7 +118,6 @@ export const store = reactive({
     // search functionality 
 
     async getProviders(searchData) {
-        console.log(searchData)
         await axios.post('http://127.0.0.1:5000/providers/provider-search', searchData)
         .then(response => this.currentProvidersList = response.data)
     },

@@ -9,6 +9,8 @@ const searchData = {
     zipCode : ''
     
 }
+
+
 let providers = ref('')
 
 const handleSearch = () => {
@@ -19,6 +21,7 @@ const handleSearch = () => {
 const handleClick = (provider) => {
     store.currentProvider = provider
     store.addProviderToDatabase(provider)
+    store.currentProvidersList = null
 }
 
         
