@@ -6,6 +6,7 @@ export const store = reactive({
     currentProvider: null,
     isLoggedIn: false,
     currentProvidersList: null,
+    searchedProvidersList: null,
 
     // login functionality
 
