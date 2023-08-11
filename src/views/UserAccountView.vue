@@ -1,10 +1,23 @@
 <script setup>
 import ReviewsListUser from "../components/ReviewsListUser.vue";
+import { store } from "../store";
 </script>
 
 <template>
     <main>
-        <ReviewsListUser></ReviewsListUser>
+        <h2>
+            Hello, {{ store.currentUser['first_name'] }}! We are so grateful you are a part of the Provide community and a part of the world! 
+            <br>
+            <br>
+            In case you don't hear it enough, let us just take this moment to say: you matter, you are wonderful and you are enough.
+            <br>
+            <br>
+            Below, you can find reviews that you have written for providers you have seen and reviews that you have liked.
+        </h2>
+            <br>
+        <ReviewsListUser reviewtype="written" reviewarray="userReviews"></ReviewsListUser>
+        <br>
+        <ReviewsListUser reviewtype="liked" reviewarray="userLikedReviews"></ReviewsListUser>
     </main>
 </template>
 
