@@ -50,28 +50,27 @@ export const store = reactive({
     // like a review 
 
     async toggleLike(reviewData) {
+        console.log(reviewData)
         const review_id = reviewData.review_id
         const requestData = {"user_id" : this.currentUser.user_id}
         // console.log(this.currentUser.liked_reviews)
         await axios.patch(`http://127.0.0.1:5000/reviews/${review_id}`, requestData)
             .then(response => {
-            console.log(this.isLiked)
-            this.getUpdatedUser()
-            console.log(this.isLiked)
+            console.log(this.providerReviews)
+            for (let review of this.providerReviews) {
+                if (review.review_id === review_id) {
+                        review["liked_by"] = response.liked_by
+                }
+            }
+            console.log(this.providerReviews)
+            console.log(this.currentUser)
+            this.currentUser["liked_reviews"] = this.getUpdatedUser().liked_reviews
             })
+            console.log(this.currentUser)
             .catch((error) => {
             
             });
         },
-    
-    getUpdatedUser() {
-        axios.get(`http://127.0.0.1:5000/user/${this.currentUser.user_id}`)
-        .then(response => {
-            this.currentUser = response.data
-            }
-            )
-        
-    },
 
     // updateLiked() {
     //     if (this.currentUser.liked_reviews && this.currentUser.liked_reviews.includes(review_id)) {
@@ -96,7 +95,10 @@ export const store = reactive({
     getReviewsForProvider() {
         axios.get(`https://provide-api.onrender.com/providers/${this.currentProvider['provider_id']}/reviews`)
         .then(response => { 
-            store.providerReviews = response.data})
+            store.providerReviews = response.data
+            console.log("printing store.providerReviews", store.providerReviews)
+            console.log("printing store.providerReviews[0]", store.providerReviews[0])
+            console.log("printing store.providerReviews[0]", store.providerReviews[0]["emoji_rating"])})
         .catch((error) => {
             this.createResponseMessage('Oh dear, get reviews for provider did not work...')
         })
@@ -106,19 +108,9 @@ export const store = reactive({
         axios.get(`https://provide-api.onrender.com/user/${this.currentUser['user_id']}/reviews`)
         .then(response => { 
             store.userReviews = response.data
-            console.log(store.userReviews)})
+            console.log(store.reviews)})
         .catch((error) => {
             this.createResponseMessage('Oh dear, get reviews for user did not work...')
-        })
-    },
-
-    getUserLikedReviews() {
-        axios.get(`https://provide-api.onrender.com/user/${this.currentUser['user_id']}/liked-reviews`)
-        .then(response => { 
-            store.userLikedReviews = response.data
-            console.log(store.userLikedReviews)})
-        .catch((error) => {
-            this.createResponseMessage('Oh dear, get reviews liked by user did not work...')
         })
     },
 
