@@ -38,21 +38,7 @@ export const store = reactive({
             })
         },
 
-    doLogin(userData) {
-        console.log(userData)
-        axios.post('https://provide-api.onrender.com/user/login', userData)
-    .then(response => {
-            this.currentUser = response.data.user
-            this.isLoggedIn = true
-        }).catch((error) => {
-            if (error.response.status == 401) {
-                this.createResponseMessage('Please enter a valid username and password')
-        } 
-        else {
-            this.createResponseMessage('Please complete all fields')
-        }
-        });
-    },
+    
 
     doLogout() {
         this.isLoggedIn = false;
