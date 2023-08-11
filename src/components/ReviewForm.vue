@@ -20,6 +20,7 @@ const reviewData = {
 
 // functions
 const handleSubmit = () => {
+    console.log("submitting review")
     store.createReview(reviewData)
 }
 

@@ -3,7 +3,18 @@ import axios from 'axios';
 // variables
 export const store = reactive({
     currentUser: null,
-    currentProvider: 1,
+    currentProvider: {
+        "address_1": "123 Main St.",
+        "city": "Seattle",
+        "first_name": "Meredith",
+        "last_name": "Grey",
+        "licenses": "M.D., F.A.C.S.",
+        "postal_code": 98122,
+        "provider_id": 2,
+        "provider_type": "General Surgeon",
+        "state": "Washington",
+        "telephone_number": "123-456-7890"
+      },
     review_ID: null,
     isLoggedIn: false,
     currentProvidersList: null,
@@ -62,7 +73,8 @@ export const store = reactive({
         },
     
     createReview(reviewData) {
-        reviewData['author_id'] = this.currentUser
+        reviewData['author_id'] = this.currentUser['user_id']
+        console.log("reviewData: ", reviewData)
         axios.post(`https://provide-api.onrender.com/providers/${this.currentProvider}/reviews`, reviewData)
             .then(response => {
             response})
