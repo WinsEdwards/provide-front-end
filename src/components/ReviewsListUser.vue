@@ -1,5 +1,4 @@
 <script setup>
-import ReviewItem from "../components/ReviewItem.vue"
 import ReviewForm from "../components/ReviewForm.vue"
 import { store } from '../store';
 
@@ -26,7 +25,7 @@ const handleClick = () => {
         Reviews for {{ store.currentUser }}:
     </h3>
         <ul>
-            <li v-for="(review, index) in reviews" :key="index">
+            <li v-for="(review, index) in store.userReviews" :key="index">
             You said:
             "{{ review.description }}"
             <br>

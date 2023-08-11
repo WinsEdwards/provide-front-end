@@ -1,5 +1,4 @@
 <script setup>
-import ReviewItem from "../components/ReviewItem.vue"
 import ReviewForm from "../components/ReviewForm.vue"
 import { store } from '../store';
 
@@ -21,10 +20,10 @@ const handleClick = () => {
 
     <div class="review-container">
     <h3>
-        Reviews for {{ store.currentProvider}}:
+        Reviews for provider {{ store.currentProvider}}:
     </h3>
         <ul>
-            <li v-for="(review, index) in reviews" :key="index">
+            <li v-for="(review, index) in store.providerReviews" :key="index">
             A community member says:
             "{{ review.description }}"
             <br>
