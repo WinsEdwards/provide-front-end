@@ -16,8 +16,6 @@ const handleClick = () => {
 
 <template>
 
-    <ReviewForm></ReviewForm>
-
     <div class="review-container">
     <h3>
         Reviews for provider {{ store.currentProvider}}:
