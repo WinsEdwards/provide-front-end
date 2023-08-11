@@ -17,7 +17,9 @@ const handleClick = () => {
     <SearchBar></SearchBar>
     <ProviderListItem></ProviderListItem>
     <ReviewForm></ReviewForm>
-    <p>I'm importing ReviewsListProvider to see if it's working below this line</p>
+    <br>
+    <h3>I'm importing ReviewsListProvider to see if it's working below this line</h3>
+    <br>
     <button @click="handleClick">View Provider Reviews</button>
     <ReviewsListProvider></ReviewsListProvider>
   </main>
