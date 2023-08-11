@@ -1,10 +1,13 @@
 <script setup>
+import ReviewsListProvider from '../components/ReviewsListProvider.vue';
+
 
 </script>
 
 <template>
     <main>
         <h1>This is a single provider's page!</h1>
+        <ReviewsListProvider providerReviews="reviews"></ReviewsListProvider>
     </main>
 </template>
 

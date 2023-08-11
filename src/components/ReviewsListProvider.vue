@@ -1,22 +1,41 @@
 <script setup>
-import ReviewItem from "../components/ReviewItem.vue"
 import ReviewForm from "../components/ReviewForm.vue"
-// defineProps({
-// reviews: {
-//     type: Array,
-//     required: true
-// }
-// })
+import { store } from '../store';
+
+defineProps({
+reviews: {
+    type: Array,
+    required: true
+}})
+
+//functions
+const handleClick = () => {
+    store.toggleLike()
+}
 </script>
 
 <template>
-    <div class="greetings">
-        <h1 class="green">{{ msg }}</h1>
-        <h3>
-            This will contain a bunch of review items
-        </h3>
-        <ReviewItem></ReviewItem>
-        <ReviewForm></ReviewForm>
+
+    <ReviewForm></ReviewForm>
+
+    <div class="review-container">
+    <h3>
+        Reviews for provider {{ store.currentProvider}}:
+    </h3>
+        <ul>
+            <li v-for="(review, index) in store.providerReviews" :key="index">
+            A community member says:
+            "{{ review.description }}"
+            <br>
+            Emoji Rating: 
+            {{ review.emoji_rating }}
+            <br>
+            Recommended to a friend?
+            {{ review.recommended ? 'Yes' : 'No' }}
+            <br>
+            <button className='ReviewLikeCount' @click="handleClick">+</button>{{ review.liked_count }} 
+            </li>
+        </ul>
     </div>
 </template>
 

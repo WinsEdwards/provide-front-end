@@ -1,4 +1,6 @@
 <script setup>
+import { store } from '../store';
+import ReviewsListProvider from './ReviewsListProvider.vue';
 // defineProps({
 //   provider: {
 //     type: Object,
@@ -12,6 +14,8 @@
     <h3>
       This is a single instance of a provider component that will go onto a page
     </h3>
+    <!-- get reviews on load -->
+    <ReviewsListProvider></ReviewsListProvider>
   </div>
 </template>
 

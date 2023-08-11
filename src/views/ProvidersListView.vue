@@ -2,6 +2,13 @@
 import ProviderListItem from '../components/ProviderListItem.vue';
 import SearchBar from '../components/SearchBar.vue';
 import ReviewForm from '../components/ReviewForm.vue';
+import ReviewsListProvider from '../components/ReviewsListProvider.vue';
+import { store } from '../store';
+
+// functions
+const handleClick = () => {
+    store.getReviewsForProvider()
+}
 </script>
 
 <template>
@@ -10,6 +17,9 @@ import ReviewForm from '../components/ReviewForm.vue';
     <SearchBar></SearchBar>
     <ProviderListItem></ProviderListItem>
     <ReviewForm></ReviewForm>
+    <p>I'm importing ReviewsListProvider to see if it's working below this line</p>
+    <button @click="handleClick">View Provider Reviews</button>
+    <ReviewsListProvider></ReviewsListProvider>
   </main>
 </template>
 
