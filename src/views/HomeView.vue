@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar.vue'
 
 <template>
   <main>
-    <h1>This is the home page</h1>
+    <h1>Welcome to Provide!</h1>
     <SearchBar></SearchBar>
     <ReviewCarousel></ReviewCarousel>
   </main>
