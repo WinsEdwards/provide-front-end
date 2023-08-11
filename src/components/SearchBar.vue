@@ -1,7 +1,7 @@
 <script setup>
 import {ref, computed} from 'vue'
-import axios from 'axios'
 import { store } from '../store';
+import { RouterLink} from 'vue-router'
 
 const searchData = {
     firstName : '',
@@ -14,36 +14,11 @@ let providers = ref('')
 const handleSearch = () => {
     // console.log(searchData)
     store.getProviders(searchData)
-    getProvidersList(store.currentProvidersList)
 }
 
-const getProvidersList = (resultsList) => {
-    const resultsDict = {}
-    for (let result of resultsList.results) {
-        console.log(result)
-        resultsDict[resultsList.results.indexOf(result)] = {
-            provider_id : result["number"],
-            first_name : result["basic"]["first_name"],
-            last_name : result["basic"]["last_name"],
-            address_1 : result["addresses"][1]["address_1"],
-            city : result["addresses"][1]["city"],
-            state : result["addresses"][1]["state"],
-            postal_code : result["addresses"][1]["postal_code"],
-        };
-
-        if (result["basic"]["credential"]){
-            resultsDict[resultsList.results.indexOf(result)]["provider_type"] = result["basic"]["credential"]
-        } else if (result["taxonomies"]["desc"]) {
-            resultsDict[resultsList.results.indexOf(result)]["licenses"] = result["taxonomies"]["desc"]
-        } else if (result["addresses"][1]["telephone_number"]){
-            resultsDict[resultsList.results.indexOf(result)]["telephone_number"] = result["addresses"][1]["telephone_number"]
-        } ;
-            
-    }
-    store.searchedProvidersList = resultsDict
-
-    return resultsDict;
-        
+const handleClick = (provider) => {
+    store.currentProvider = provider
+    store.addProviderToDatabase(provider)
 }
 
         
@@ -62,9 +37,9 @@ const getProvidersList = (resultsList) => {
         
         <button type="submit">search</button>
         </form>
-        <div v-for="provider in store.searchedProvidersList">
+        <div v-for="provider in store.currentProvidersList">
             <div>
-            <p>{{  provider.first_name }} {{ provider.last_name }} {{ provider.provider_type }}</p>
+            <p><RouterLink to="/providers/provider" @click="handleClick(provider)">{{  provider.first_name }} {{ provider.last_name }}</RouterLink> {{ provider.provider_type }}</p>
             <p>{{ provider.address_1 }} {{ provider.city }} {{ provider.state }} {{ provider.zipCode}}</p>
             <p>{{ provider.telephone_number }}</p>
         </div>

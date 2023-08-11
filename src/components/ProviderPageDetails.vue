@@ -12,10 +12,10 @@ import ReviewsListProvider from './ReviewsListProvider.vue';
 <template>
   <div class="provider-page">
     <h3>
-      This is a single instance of a provider component that will go onto a page
+      These are the details of a provider that will go onto each individual provider page
     </h3>
     <!-- get reviews on load -->
-    <ReviewsListProvider></ReviewsListProvider>
+    <!-- <ReviewsListProvider></ReviewsListProvider> -->
   </div>
 </template>
 

@@ -4,6 +4,7 @@ import SearchBar from '../components/SearchBar.vue';
 import ReviewForm from '../components/ReviewForm.vue';
 import ReviewsListProvider from '../components/ReviewsListProvider.vue';
 import { store } from '../store';
+import { RouterLink, RouterView } from 'vue-router'
 
 // functions
 const handleClick = () => {
@@ -16,12 +17,8 @@ const handleClick = () => {
     <h1>This is the provider page, will have a list of providers</h1>
     <SearchBar></SearchBar>
     <ProviderListItem></ProviderListItem>
-    <ReviewForm></ReviewForm>
-    <br>
-    <h3>I'm importing ReviewsListProvider to see if it's working below this line</h3>
-    <br>
-    <button @click="handleClick">View Provider Reviews</button>
-    <ReviewsListProvider></ReviewsListProvider>
+    <RouterLink to="/providers/provider">Single Provider</RouterLink>
+    
   </main>
 </template>
 

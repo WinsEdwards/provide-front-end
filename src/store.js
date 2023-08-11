@@ -7,7 +7,6 @@ export const store = reactive({
     review_ID: null,
     isLoggedIn: false,
     currentProvidersList: null,
-    searchedProvidersList: null,
     providerReviews: [],
     userReviews: [],
     userLikedReviews: [],
@@ -33,7 +32,7 @@ export const store = reactive({
         axios.post('https://provide-api.onrender.com/user/login', userData)
     .then(response => {
             this.currentUser = response.data.user
-            console.log(this.currentUser)
+            console.log('CURRENT USER',this.currentUser)
             this.isLoggedIn = true
         }).catch((error) => {
             console.log(error)
@@ -95,11 +94,20 @@ export const store = reactive({
 
     // search functionality 
 
-    getProviders(searchData) {
+    async getProviders(searchData) {
         console.log(searchData)
-        axios.post('http://127.0.0.1:5000/providers/provider-search', searchData)
+        await axios.post('http://127.0.0.1:5000/providers/provider-search', searchData)
         .then(response => this.currentProvidersList = response.data)
     },
+
+    // add provider to database
+
+    addProviderToDatabase(providerData) {
+        console.log(providerData)
+        axios.post('https://provide-api.onrender.com/providers', providerData)
+        .then(response => response)
+    },
+
     // error message functionality
 
     responseMessage: null,
