@@ -1,10 +1,15 @@
 <script setup>
 import ReviewForm from "../components/ReviewForm.vue"
 import { store } from '../store';
+import { ref } from "vue";
 
 defineProps({
-reviews: {
-    type: Array,
+reviewtype: {
+    type: String,
+    required: true
+},
+reviewarray: {
+    type: String,
     required: true
 }})
 
@@ -13,25 +18,27 @@ const handleClick = () => {
     store.toggleLike()
 }
 
+const handleWrittenClick = () => {
+    console.log("inside handleWrittenClick")
+    store.getReviewsForUser()   
+}
+
+const handleLikedClick = () => {
+    console.log("inside handleLikedClick")
+    store.getUserLikedReviews()
+    }    
+
 </script>
 <template>
-
-    <h2>
-        Hello, {{ store.currentUser['first_name'] }}! We are so grateful you are a part of the Provide community and a part of the world! 
-        <br>
-        <br>
-        In case you don't hear it enough, let us just take this moment to say: you matter, you are wonderful and you are enough.
-        <br>
-        <br>
-        Below, you can find reviews that you have written for providers you have seen and reviews that you have liked.
-    </h2>
-    <br>
     <div class="review-container">
     <h3>
-        {{ store.currentUser["username"] }}'s written reviews:
+        {{ store.currentUser["username"] }}'s {{reviewtype}} reviews:
     </h3>
+    <br>
+    <button type="button" class="GetReviews" @click="(reviewtype === 'written') ? handleWrittenClick : handleLikedClick">View {{ reviewtype }} reviews</button>
+    <br>
         <ul>
-            <li v-for="(review, index) in store.userReviews" :key="index">
+            <li v-for="(review, index) in store.reviewarray" :key="index">
             You said:
             "{{ review.description }}"
             <br>

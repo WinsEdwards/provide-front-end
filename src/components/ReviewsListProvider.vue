@@ -2,12 +2,6 @@
 import ReviewForm from "../components/ReviewForm.vue"
 import { store } from '../store';
 
-defineProps({
-reviews: {
-    type: Array,
-    required: true
-}})
-
 //functions
 const handleClick = () => {
     store.toggleLike()
