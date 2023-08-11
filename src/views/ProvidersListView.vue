@@ -15,7 +15,7 @@ const handleClick = () => {
 
 <template>
   <main>
-    <h1>This is the provider page, will have a list of providers</h1>
+    <h1>Select a provider from the list below!</h1>
     <SearchBar></SearchBar>
     <ProviderList></ProviderList>
     
