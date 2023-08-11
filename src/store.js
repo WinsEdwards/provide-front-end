@@ -14,7 +14,7 @@ export const store = reactive({
         "provider_type": "General Surgeon",
         "state": "Washington",
         "telephone_number": "123-456-7890"
-      },
+        },
     review_ID: null,
     isLoggedIn: false,
     currentProvidersList: null,
@@ -43,10 +43,8 @@ export const store = reactive({
         axios.post('https://provide-api.onrender.com/user/login', userData)
     .then(response => {
             this.currentUser = response.data.user
-            console.log('CURRENT USER',this.currentUser)
             this.isLoggedIn = true
         }).catch((error) => {
-            console.log(error)
             if (error.response.status == 401) {
                 this.createResponseMessage('Please enter a valid username and password')
         } 

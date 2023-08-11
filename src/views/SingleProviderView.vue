@@ -1,6 +1,7 @@
 <script setup>
 import ReviewsListProvider from '../components/ReviewsListProvider.vue';
 import ReviewForm from '../components/ReviewForm.vue';
+import {store} from '../store'
 
 const handleClick = () => {
     store.getReviewsForProvider()

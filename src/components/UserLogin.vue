@@ -1,6 +1,8 @@
 <script setup>
 import { store } from '../store';
 import { useRouter, useRoute } from 'vue-router'
+import axios from 'axios';
+
 // variables
 const router = useRouter()
 const userData = {
@@ -9,19 +11,33 @@ const userData = {
 }
 
 // login button has to be clicked twice for login to take us to home page
-const handleSubmit = () => {
-    store.doLogin(userData)
-    if (store.currentUser != null) {
-        router.push('/')
+
+const doLogin = (userData) => {
+        console.log(userData)
+        axios.post('https://provide-api.onrender.com/user/login', userData)
+    .then(response => {
+            store.currentUser = response.data.user
+            store.isLoggedIn = true
+            router.push('/')
+        }).catch((error) => {
+            if (error.response.status == 401) {
+                store.createResponseMessage('Please enter a valid username and password')
+        } 
+        else {
+            store.createResponseMessage('Please complete all fields')
+        }
+        });
     }
-    
+
+const handleClick = () => {
+    router.push('/')
 }
 
 </script>
 
 <template>
     <div login-form-container>
-        <form name="login-form" @submit.prevent="handleSubmit" >
+        <form name="login-form" @submit.prevent="doLogin(userData)" >
             <div class="mb-3">
                 <label for="username">Username: </label>
                 <input id="username" type="text" placeholder="username" v-model="userData.username" required/>
