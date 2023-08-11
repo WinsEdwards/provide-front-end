@@ -75,7 +75,7 @@ export const store = reactive({
     createReview(reviewData) {
         reviewData['author_id'] = this.currentUser['user_id']
         console.log("reviewData: ", reviewData)
-        axios.post(`https://provide-api.onrender.com/providers/${this.currentProvider}/reviews`, reviewData)
+        axios.post(`https://provide-api.onrender.com/providers/${this.currentProvider['provider_id']}/reviews`, reviewData)
             .then(response => {
             response})
             .catch((error) => {
@@ -84,7 +84,7 @@ export const store = reactive({
     },
 
     getReviewsForProvider() {
-        axios.get(`https://provide-api.onrender.com/providers/${this.currentProvider}/reviews`)
+        axios.get(`https://provide-api.onrender.com/providers/${this.currentProvider['provider_id']}/reviews`)
         .then(response => { 
             store.providerReviews = response.data
             console.log("printing store.providerReviews", store.providerReviews)
@@ -96,7 +96,7 @@ export const store = reactive({
     },
     
     getReviewsForUser() {
-        axios.get(`https://provide-api.onrender.com/user/${this.currentUser}/reviews`)
+        axios.get(`https://provide-api.onrender.com/user/${this.currentUser['user_id']}/reviews`)
         .then(response => { 
             store.userReviews = response.data
             console.log(store.reviews)})

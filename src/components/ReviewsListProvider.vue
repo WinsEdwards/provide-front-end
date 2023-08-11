@@ -18,7 +18,7 @@ const handleClick = () => {
 
     <div class="review-container">
     <h3>
-        Reviews for provider {{ store.currentProvider}}:
+        Reviews for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:
     </h3>
         <ul>
             <li v-for="(review, index) in store.providerReviews" :key="index">
@@ -31,7 +31,7 @@ const handleClick = () => {
             Recommended to a friend?
             {{ review.recommended ? 'Yes' : 'No' }}
             <br>
-            <button className='ReviewLikeCount' @click="handleClick">+</button>{{ review.liked_count }} 
+            <button type="button" class="ReviewLikeCount" @click="handleClick">+</button>{{ review.liked_count }}
             </li>
         </ul>
     </div>

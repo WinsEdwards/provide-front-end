@@ -17,12 +17,18 @@ const handleClick = () => {
 <template>
 
     <h2>
-        Hello, {{ store.username }}! We are so grateful you are a part of the Provide community.
+        Hello, {{ store.currentUser['first_name'] }}! We are so grateful you are a part of the Provide community and a part of the world! 
+        <br>
+        <br>
+        In case you don't hear it enough, let us just take this moment to say: you matter, you are wonderful and you are enough.
+        <br>
+        <br>
+        Below, you can find reviews that you have written for providers you have seen and reviews that you have liked.
     </h2>
     <br>
     <div class="review-container">
     <h3>
-        Reviews for {{ store.currentUser }}:
+        {{ store.currentUser["username"] }}'s written reviews:
     </h3>
         <ul>
             <li v-for="(review, index) in store.userReviews" :key="index">
@@ -35,6 +41,7 @@ const handleClick = () => {
             Recommended to a friend?
             {{ review.recommended ? 'Yes' : 'No' }}
             <br>
+            <button type="button" class="ReviewLikeCount" @click="handleClick">+</button>{{ review.liked_count }}
             </li>
         </ul>
     </div>
