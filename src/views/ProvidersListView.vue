@@ -5,6 +5,7 @@ import ReviewForm from '../components/ReviewForm.vue';
 import ReviewsListProvider from '../components/ReviewsListProvider.vue';
 import { store } from '../store';
 import { RouterLink, RouterView } from 'vue-router'
+import ProviderList from '../components/ProviderList.vue'
 
 // functions
 const handleClick = () => {
@@ -16,8 +17,7 @@ const handleClick = () => {
   <main>
     <h1>This is the provider page, will have a list of providers</h1>
     <SearchBar></SearchBar>
-    <ProviderListItem></ProviderListItem>
-    <RouterLink to="/providers/provider">Single Provider</RouterLink>
+    <ProviderList></ProviderList>
     
   </main>
 </template>

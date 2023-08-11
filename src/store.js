@@ -21,6 +21,7 @@ export const store = reactive({
     providerReviews: [],
     userReviews: [],
     userLikedReviews: [],
+    currentProvidersListFromDatabase: null,
 
     // login functionality
 
@@ -104,6 +105,13 @@ export const store = reactive({
         .then(response => response)
     },
 
+    // get providers from our database 
+
+    getProvidersList () {
+        axios.get('https://provide-api.onrender.com/providers')
+        .then(response => this.currentProvidersListFromDatabase= response.data)
+        
+    },
     // error message functionality
 
     responseMessage: null,

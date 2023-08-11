@@ -38,11 +38,9 @@ const handleClick = (provider) => {
         <button type="submit">search</button>
         </form>
         <div v-for="provider in store.currentProvidersList">
-            <div>
             <p><RouterLink to="/providers/provider" @click="handleClick(provider)">{{  provider.first_name }} {{ provider.last_name }}</RouterLink> {{ provider.provider_type }}</p>
             <p>{{ provider.address_1 }} {{ provider.city }} {{ provider.state }} {{ provider.zipCode}}</p>
             <p>{{ provider.telephone_number }}</p>
-        </div>
         </div> 
     </div>
 </template>
