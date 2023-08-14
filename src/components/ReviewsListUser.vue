@@ -60,6 +60,7 @@ onUpdated(() => {
                 </li>
             </ul>
         </div>
+        <br>
         <div class="liked-review-container">
             <h3>
                 {{ store.currentUser["username"] }}'s liked reviews:

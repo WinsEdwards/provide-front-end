@@ -45,11 +45,11 @@ const handleSubmit = () => {
             <div>
                 <label for="rating">Rating: </label>
                 <select id="rating" v-model.number="reviewData.rating" required>
-                    <option value=5>5 ⭐s</option>
-                    <option value=4>4 ⭐s</option>
-                    <option value=3>3 ⭐s</option>
-                    <option value=2>2 ⭐s</option>
-                    <option value=1>1 ⭐</option>
+                    <option value=5>5 🌟s</option>
+                    <option value=4>4 🌟s</option>
+                    <option value=3>3 🌟s</option>
+                    <option value=2>2 🌟s</option>
+                    <option value=1>1 🌟</option>
                 </select>
             </div>
             <br>
@@ -58,9 +58,10 @@ const handleSubmit = () => {
                 <label for="emoji-rating">Emoji Rating: </label>
                 <select id="emoji-rating" v-model="reviewData.emoji_rating" required>
                     <option>😍</option>
+                    <option>😊</option>
                     <option>❤️</option>
                     <option>👍</option>
-                    <option>🤷</option>
+                    <option>🤷🏽</option>
                     <option>☠️</option>
                     <option>🤢</option>
                     <option>😭</option>
@@ -127,10 +128,11 @@ const handleSubmit = () => {
                     </select>          
                 </li>
                 <li>
-                    <label for="bathrooms">Does the office have gender neutral bathrooms? </label>
+                    <label for="bathrooms">If applicable, does the office have gender neutral bathrooms? </label>
                     <select id="bathrooms" v-model.number="reviewData.bathrooms" required>
                         <option value=1>Yes</option>
                         <option value=0>No</option>
+                        <option value=99>Not applicable</option>
                     </select>        
                 </li>
             </ul>
