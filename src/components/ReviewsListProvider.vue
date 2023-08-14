@@ -1,8 +1,11 @@
 <script setup>
 import ReviewForm from "../components/ReviewForm.vue"
 import { store } from '../store';
+import { onMounted, onUpdated } from 'vue';
 
 //functions
+onMounted(() => store.getReviewsForProvider());
+onUpdated(() => store.getReviewsForProvider());
 const handleClick = (reviewData) => {
     store.toggleLike(reviewData)
 }
@@ -26,8 +29,7 @@ const handleClick = (reviewData) => {
             {{ review.recommended ? 'Yes' : 'No' }}
             <br>
             <!--  -->
-            <div v-if="store.isLiked === false"><button type="button" class="ReviewLikeCount" @click="handleClick(review)" >+</button>{{ review.liked_count }}</div>
-            <button type="button" class="ReviewLikeCount" @click="handleClick(review)" v-else>-</button>
+            <div v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)" >❤️</button>{{ review.liked_count }}</div>
             </li>
         </ul>
     </div>

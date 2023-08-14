@@ -15,9 +15,8 @@ import { store } from "../store";
             Below, you can find reviews that you have written for providers you have seen and reviews that you have liked.
         </h2>
             <br>
-        <ReviewsListUser reviewtype="written" reviewarray="userReviews"></ReviewsListUser>
-        <br>
-        <ReviewsListUser reviewtype="liked" reviewarray="userLikedReviews"></ReviewsListUser>
+        <ReviewsListUser></ReviewsListUser>
+        
     </main>
 </template>
 

@@ -1,12 +1,14 @@
 <script setup>
 import ProviderListItem from '../components/ProviderListItem.vue';
 import {store} from '../store'
+import { onMounted } from 'vue';
 // defineProps({
 //     providers: {
 //         type: Array,
 //         required: true
 //     }
 // })
+onMounted(() => store.getProvidersList());
 const handleClick = (provider) => {
     store.currentProvider = provider
 }

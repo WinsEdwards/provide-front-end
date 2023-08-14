@@ -19,10 +19,12 @@ export const store = reactive({
     isLoggedIn: false,
     currentProvidersList: null,
     providerReviews: [],
-    userReviews: [],
+    userWrittenReviews: [],
     userLikedReviews: [],
     currentProvidersListFromDatabase: null,
     isLiked: false,
+    
+    
 
     // login functionality
 
@@ -49,27 +51,22 @@ export const store = reactive({
 
     // like a review 
 
-    async toggleLike(reviewData) {
-        console.log(reviewData)
+    setReviews(newValue) {
+        this.providerReviews = newValue
+    },
+
+    toggleLike(reviewData) {
         const review_id = reviewData.review_id
         const requestData = {"user_id" : this.currentUser.user_id}
-        // console.log(this.currentUser.liked_reviews)
-        await axios.patch(`http://127.0.0.1:5000/reviews/${review_id}`, requestData)
+        axios.patch(`http://localhost:5000/reviews/${review_id}`, requestData)
             .then(response => {
-            console.log(this.providerReviews)
-            for (let review of this.providerReviews) {
-                if (review.review_id === review_id) {
-                        review["liked_by"] = response.liked_by
-                }
-            }
-            console.log(this.providerReviews)
-            console.log(this.currentUser)
-            this.currentUser["liked_reviews"] = this.getUpdatedUser().liked_reviews
+            this.setReviews(prevReviews =>{
+                const updatedReviews = prevReviews.map(review => {
+                    return review.review_id === review_id ? response.data : review
+                })
+                return updatedReviews
             })
-            console.log(this.currentUser)
-            .catch((error) => {
-            
-            });
+        })
         },
 
     // updateLiked() {
@@ -104,11 +101,23 @@ export const store = reactive({
         })
     },
     
-    getReviewsForUser() {
+    getReviewsWrittenByUser() {
         axios.get(`https://provide-api.onrender.com/user/${this.currentUser['user_id']}/reviews`)
         .then(response => { 
-            store.userReviews = response.data
-            console.log(store.reviews)})
+            console.log(response)
+            store.userWrittenReviews = response.data
+            console.log(store.userWrittenReviews)})
+        .catch((error) => {
+            this.createResponseMessage('Oh dear, get reviews for user did not work...')
+        })
+    },
+
+    getReviewsLikedByUser() {
+        axios.get(`https://provide-api.onrender.com/user/${this.currentUser['user_id']}/liked-reviews`)
+        .then(response => { 
+            console.log(response)
+            store.userLikedReviews = response.data.liked_reviews
+            console.log(store.userLikedReviews)})
         .catch((error) => {
             this.createResponseMessage('Oh dear, get reviews for user did not work...')
         })
