@@ -58,7 +58,7 @@ export const store = reactive({
     toggleLike(reviewData) {
         const review_id = reviewData.review_id
         const requestData = {"user_id" : this.currentUser.user_id}
-        axios.patch(`http://localhost:5000/reviews/${review_id}`, requestData)
+        axios.patch(`https://provide-api.onrender.com/reviews/${review_id}`, requestData)
             .then(response => {
             this.setReviews(prevReviews =>{
                 const updatedReviews = prevReviews.map(review => {
@@ -69,12 +69,12 @@ export const store = reactive({
         })
         },
 
-    getUpdatedUser() {
-        axios.get(`http://localhost:5000/user/${this.currentUser.user_id}`)
-        .then(response => {
-            this.currentUser = response.data
-        })
-    },
+    // getUpdatedUser() {
+    //     axios.get(`http://localhost:5000/user/${this.currentUser.user_id}`)
+    //     .then(response => {
+    //         this.currentUser = response.data
+    //     })
+    // },
 
     updateLiked() {
         if (this.currentUser.liked_reviews && this.currentUser.liked_reviews.includes(review_id)) {
@@ -139,7 +139,7 @@ export const store = reactive({
     // search functionality 
 
     async getProviders(searchData) {
-        await axios.post('http://127.0.0.1:5000/providers/provider-search', searchData)
+        await axios.post('https://provide-api.onrender.com/providers/provider-search', searchData)
         .then(response => this.currentProvidersList = response.data)
     },
 
