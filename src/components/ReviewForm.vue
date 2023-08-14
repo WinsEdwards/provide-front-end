@@ -2,6 +2,8 @@
 import axios from 'axios';
 import { store } from '../store';
 import { routerKey } from 'vue-router';
+import { ref } from 'vue';
+import { onUpdated } from 'vue';
 
 // variables
 const reviewData = {
@@ -18,6 +20,8 @@ const reviewData = {
     bathrooms: null,
 }
 
+var submitted = ref(false)
+
 // functions
 const handleSubmit = () => {
     console.log("submitting review")
@@ -30,7 +34,7 @@ const handleSubmit = () => {
 
     <div class="review-form-contain">
 
-        <form class="review-form" @submit.prevent="handleSubmit">
+        <form class="review-form" @submit.prevent="handleSubmit(),(submitted = true)">
             <h3>Leave a review for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:</h3>
             <br>
             <div>
@@ -65,7 +69,7 @@ const handleSubmit = () => {
             </div>
             <br>    
             <h3>Please answer a few quick questions to help others:</h3>
-            <!-- note: change y/n values to true/false where possible -->
+            <br>
             <ul>
                 <li>
                     <label for="recommended">Would you recommend this provider to a friend? </label>
@@ -130,7 +134,8 @@ const handleSubmit = () => {
                     </select>        
                 </li>
             </ul>
-            <button class="btn btn-outline-dark" type="submit">
+            <br>
+            <button class="btn btn-outline-dark" type="submit" :disabled="submitted">
                 ✨ Submit Review ✨
             </button>
             </form>
