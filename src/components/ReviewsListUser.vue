@@ -20,6 +20,7 @@ onMounted(() => {
 });
 
 onUpdated(() => {
+    store.getReviewsWrittenByUser()
     store.getReviewsLikedByUser()
 })
 
@@ -54,6 +55,7 @@ onUpdated(() => {
                 Recommended to a friend?
                 {{ review.recommended ? 'Yes' : 'No' }}
                 <br>
+                <button @click="store.deleteReview(review.review_id)">Delete</button>
                 <!-- <button type="button" class="ReviewLikeCount" @click="handleClick">+</button>{{ review.liked_count }} -->
                 </li>
             </ul>

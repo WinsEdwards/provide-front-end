@@ -129,6 +129,13 @@ export const store = reactive({
         })
     },
 
+    deleteReview(reviewID) {
+        axios.delete(`https://provide-api.onrender.com/reviews/${reviewID}`)
+        .then(response => {
+            response
+        })
+    },
+
     // search functionality 
 
     async getProviders(searchData) {
