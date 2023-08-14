@@ -69,15 +69,22 @@ export const store = reactive({
         })
         },
 
+    getUpdatedUser() {
+        axios.get(`http://localhost:5000/users/${this.currentUser.user_id}`)
+        .then(response => {
+            this.currentUser = response.data
+        })
+    },
+
     // updateLiked() {
     //     if (this.currentUser.liked_reviews && this.currentUser.liked_reviews.includes(review_id)) {
-    //         this.isLiked = false
-    //     } else {
     //         this.isLiked = true
+    //     } else {
+    //         this.isLiked = false
     //     }
     // },
 
-    
+    // review functionality 
     createReview(reviewData) {
         reviewData['author_id'] = this.currentUser['user_id']
         console.log("reviewData: ", reviewData)
@@ -104,9 +111,8 @@ export const store = reactive({
     getReviewsWrittenByUser() {
         axios.get(`https://provide-api.onrender.com/user/${this.currentUser['user_id']}/reviews`)
         .then(response => { 
-            console.log(response)
             store.userWrittenReviews = response.data
-            console.log(store.userWrittenReviews)})
+        })
         .catch((error) => {
             this.createResponseMessage('Oh dear, get reviews for user did not work...')
         })
@@ -116,7 +122,7 @@ export const store = reactive({
         axios.get(`https://provide-api.onrender.com/user/${this.currentUser['user_id']}/liked-reviews`)
         .then(response => { 
             console.log(response)
-            store.userLikedReviews = response.data.liked_reviews
+            store.userLikedReviews = response.data
             console.log(store.userLikedReviews)})
         .catch((error) => {
             this.createResponseMessage('Oh dear, get reviews for user did not work...')

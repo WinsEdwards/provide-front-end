@@ -14,7 +14,7 @@ import { store } from './store'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/search">Search</RouterLink>
-        <RouterLink to="/providers" @click="store.getProvidersList()">Providers</RouterLink>
+        <RouterLink to="/providers">Providers</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/user" v-if="store.isLoggedIn">Account</RouterLink>
         <button v-if="store.isLoggedIn" @click="store.doLogout()"><RouterLink to ="/login">Logout</RouterLink></button>

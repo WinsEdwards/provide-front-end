@@ -1,7 +1,7 @@
 <script setup>
 import ReviewForm from "../components/ReviewForm.vue"
 import { store } from '../store';
-import { onMounted } from "vue";
+import { onMounted, onUpdated } from "vue";
 
 defineProps({
 reviewtype: {
@@ -18,9 +18,10 @@ onMounted(() => {
     store.getReviewsWrittenByUser()
     store.getReviewsLikedByUser()
 });
-const handleClick = () => {
-    store.toggleLike()
-}
+
+onUpdated(() => {
+    store.getReviewsLikedByUser()
+})
 
 // const handleWrittenClick = () => {
 //     console.log("inside handleWrittenClick")
@@ -75,7 +76,7 @@ const handleClick = () => {
                     Recommended to a friend?
                     {{ review.recommended ? 'Yes' : 'No' }}
                     <br>
-                    <button type="button" class="ReviewLikeCount" @click="handleClick">+</button>{{ review.liked_count }}
+                    <button type="button" class="ReviewLikeCount" @click="store.toggleLike(review)">+</button>
                     </li>
                 </ul>
         </div>
