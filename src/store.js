@@ -70,19 +70,19 @@ export const store = reactive({
         },
 
     getUpdatedUser() {
-        axios.get(`http://localhost:5000/users/${this.currentUser.user_id}`)
+        axios.get(`http://localhost:5000/user/${this.currentUser.user_id}`)
         .then(response => {
             this.currentUser = response.data
         })
     },
 
-    // updateLiked() {
-    //     if (this.currentUser.liked_reviews && this.currentUser.liked_reviews.includes(review_id)) {
-    //         this.isLiked = true
-    //     } else {
-    //         this.isLiked = false
-    //     }
-    // },
+    updateLiked() {
+        if (this.currentUser.liked_reviews && this.currentUser.liked_reviews.includes(review_id)) {
+            this.isLiked = true
+        } else {
+            this.isLiked = false
+        }
+    },
 
     // review functionality 
     createReview(reviewData) {
@@ -100,11 +100,11 @@ export const store = reactive({
         axios.get(`https://provide-api.onrender.com/providers/${this.currentProvider['provider_id']}/reviews`)
         .then(response => { 
             store.providerReviews = response.data
-            console.log("printing store.providerReviews", store.providerReviews)
-            console.log("printing store.providerReviews[0]", store.providerReviews[0])
-            console.log("printing store.providerReviews[0]", store.providerReviews[0]["emoji_rating"])})
+            })
         .catch((error) => {
-            this.createResponseMessage('Oh dear, get reviews for provider did not work...')
+            if (error.response.status == 404) {
+                this.createResponseMessage('Be the first to leave a review for this provider!')
+            } 
         })
     },
     

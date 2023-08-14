@@ -1,18 +1,16 @@
 <script setup>
 import ReviewsListProvider from '../components/ReviewsListProvider.vue';
 import ReviewForm from '../components/ReviewForm.vue';
+import ProviderPageDetails from '../components/ProviderPageDetails.vue';
+import { store } from '../store';
 
 </script>
 
 <template>
     <main>
-        <h1>This is a single provider's page!</h1>
-        <ReviewForm></ReviewForm>
-    <br>
-    <br>
-    
-    <ReviewsListProvider providerReviews="reviews"></ReviewsListProvider>
-
+        <ProviderPageDetails></ProviderPageDetails>
+        <ReviewForm v-if="store.isLoggedIn"></ReviewForm>
+        <ReviewsListProvider providerReviews="reviews"></ReviewsListProvider>
     </main>
 </template>
 

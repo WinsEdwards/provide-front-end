@@ -30,12 +30,12 @@ const handleClick = (provider) => {
 <template>
     <div class="greetings">
         <form name="search-form" @submit.prevent="handleSearch">
-        <label for="search">
-            Search for a provider here: 
-        </label>
 
+        <label>First Name:</label>
         <input type="text" id="search" placeholder="First Name" v-model="searchData.firstName" required>
+        <label>Last Name:</label>
         <input type="text" id="search" placeholder="Last Name" v-model="searchData.lastName" required>
+        <label>Zip Code:</label>
         <input type="text" id="search" placeholder="Zip Code" v-model="searchData.zipCode">
         
         <button type="submit">search</button>
