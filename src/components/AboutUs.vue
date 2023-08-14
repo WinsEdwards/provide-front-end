@@ -4,18 +4,17 @@ defineProps({
     type: Object,
     required: false
   },
-
 })
+
 </script>
 
 <template>
   <div class="about-us-container">
-    <ul>
-      <li><img src="{{ team_mbr_info.img }}" alt="Digital artist's rendering of {{ team_mbr_info.name }}"></li>
-      <li>{{ team_mbr_info.name }}</li>
-      <li>{{ team_mbr_info.pronouns }}</li>
-      <li>{{ team_mbr_info.bio }}</li>
-    </ul>
+    <img src="`${team_mbr_info.profile_pic}`">
+    <h2>{{ team_mbr_info.name }}</h2>
+    <h3>{{ team_mbr_info.pronouns }}</h3>
+    <p>{{ team_mbr_info.bio }}</p>
+      <!-- <li><img src=team_mbr_img alt="Digital artist's rendering of "></li> -->
   </div>
 </template>
 
