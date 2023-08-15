@@ -1,61 +1,45 @@
+/* * {
+    border: dashed;
+} */
+
 header {
-    line-height: 1.5;
-    max-height: 100vh;
+    line-height: 2.5;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f7ede2;
+    width: 125vw;
+    position: relative;
+    max-width: 125vw;
+    left: 29%;
+    margin-left: -30vw;
+    margin-bottom: 2em;
   }
   
   .logo {
     display: block;
-    margin: 0 auto 2rem;
+    margin-right: 1rem;
   }
   
   nav {
-    width: 100%;
-    font-size: 12px;
-    text-align: center;
-    margin-top: 2rem;
-  }
-  
-  nav a.router-link-exact-active {
-    color: var(--color-text);
-  }
-  
-  nav a.router-link-exact-active:hover {
-    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-size: 1.33rem;
   }
   
   nav a {
     display: inline-block;
-    padding: 0 1rem;
-    border-left: 1px solid var(--color-border);
+    color: #84A59D;
+    padding: 0 2rem;
+    border-left: 1px solid var(#3D524D);
   }
   
   nav a:first-of-type {
     border: 0;
   }
   
-  @media (min-width: 1024px) {
-    header {
-      display: flex;
-      place-items: center;
-      padding-right: calc(var(--section-gap) / 2);
-    }
-  
-    .logo {
-      margin: 0 2rem 0 0;
-    }
-  
-    header .wrapper {
-      display: flex;
-      place-items: flex-start;
-      flex-wrap: wrap;
-    }
-  
-    nav {
-      text-align: left;
-      margin-left: -1rem;
-      font-size: 1rem;
-  
-      padding: 1rem 0;
-      margin-top: 1rem;
-    }
+  /* Optional: Add background color or other styling to the navigation ribbon */
+  nav {
+    background-color: var(#f7ede2);
+    /* Add any other styling you want for the navigation ribbon */
   }
