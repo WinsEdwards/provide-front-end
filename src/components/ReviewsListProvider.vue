@@ -12,15 +12,20 @@ const handleClick = (reviewData) => {
     store.toggleLike(reviewData)
 }
 
-const checkLiked = (review) => {
-    if (review.liked_by) {
-        if (store.currentUser.user_id in review.liked_by) {
-            return true
-        }
-    } else {
-        return false
-    }
-}
+// const checkLiked = (review) => {
+//     console.log("USER LIKED",store.currentUser.liked_reviews)
+//     console.log(store.currentUser.liked_reviews.length)
+//     console.log(review.review_id)
+//     if (store.currentUser.liked_reviews.length > 0) {
+//         for (key in store.currentUser.liked_reviews) {
+//             if (review.review_id === store.currentUser.liked_reviews[key]){
+//                 return true
+//             }
+//         }
+//     } else {
+//         return false
+//     }
+// }
 </script>
 
 <template>
@@ -41,8 +46,9 @@ const checkLiked = (review) => {
                     Recommended to a friend?
                     {{ review.recommended ? 'Yes' : 'No' }}
                     <br>
+                    {{ store.currentUser.liked_reviews }}
                     <!--  -->
-                    <div v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="checkLiked(review)">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
+                    <div v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="store.currentUser.liked_reviews.includes(review.review_id) ">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
                     </li>
                 </ul>
         </div>

@@ -60,6 +60,7 @@ export const store = reactive({
         const requestData = {"user_id" : this.currentUser.user_id}
         axios.patch(`https://provide-api.onrender.com/reviews/${review_id}`, requestData)
             .then(response => {
+            this.getUpdatedUser()
             this.setReviews(prevReviews =>{
                 const updatedReviews = prevReviews.map(review => {
                     return review.review_id === review_id ? response.data : review
@@ -69,19 +70,11 @@ export const store = reactive({
         })
         },
 
-    // getUpdatedUser() {
-    //     axios.get(`http://localhost:5000/user/${this.currentUser.user_id}`)
-    //     .then(response => {
-    //         this.currentUser = response.data
-    //     })
-    // },
-
-    updateLiked() {
-        if (this.currentUser.liked_reviews && this.currentUser.liked_reviews.includes(review_id)) {
-            this.isLiked = true
-        } else {
-            this.isLiked = false
-        }
+    getUpdatedUser() {
+        axios.get(`http://localhost:5000/user/${this.currentUser.user_id}`)
+        .then(response => {
+            this.currentUser.liked_reviews = response.data.liked_reviews
+        })
     },
 
     // review functionality 
