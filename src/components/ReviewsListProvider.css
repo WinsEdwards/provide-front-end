@@ -12,6 +12,8 @@
     width: 375px;
     padding: 1em;
     flex-direction: column;
+    /* this is so I can see each review */
+    border: dotted;
 }
 
 .like-button {
