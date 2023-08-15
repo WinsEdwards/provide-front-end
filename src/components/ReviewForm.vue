@@ -1,9 +1,6 @@
 <script setup>
-import axios from 'axios';
 import { store } from '../store';
-import { routerKey } from 'vue-router';
 import { ref } from 'vue';
-import { onUpdated } from 'vue';
 
 // variables
 const reviewData = {
@@ -32,16 +29,19 @@ const handleSubmit = () => {
 
 <template>
 
-    <div class="review-form-contain">
-
+    <div class="review-form-container">
         <form class="review-form" @submit.prevent="handleSubmit(),(submitted = true)">
             <h3>Leave a review for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:</h3>
+            
             <br>
+
             <div>
                 <label for="description">Review: </label>      
                 <textarea id="description" v-model="reviewData.description" maxlength="4096" required></textarea>
             </div>
+
             <br>
+
             <div>
                 <label for="rating">Rating: </label>
                 <select id="rating" v-model.number="reviewData.rating" required>
@@ -52,7 +52,9 @@ const handleSubmit = () => {
                     <option value=1>1 🌟</option>
                 </select>
             </div>
+
             <br>
+
             <div>
                 <!-- consider accessibility of emoji selection -->
                 <label for="emoji-rating">Emoji Rating: </label>
@@ -68,9 +70,13 @@ const handleSubmit = () => {
                     <option>😡</option>
                 </select>
             </div>
-            <br>    
-            <h3>Please answer a few quick questions to help others:</h3>
+
             <br>
+            
+            <h3>Please answer a few quick questions to help others:</h3>
+
+            <br>
+
             <ul>
                 <li>
                     <label for="recommended">Would you recommend this provider to a friend? </label>
@@ -137,22 +143,17 @@ const handleSubmit = () => {
                 </li>
             </ul>
             <br>
+
             <button class="btn btn-outline-dark" type="submit" :disabled="submitted">
                 ✨ Submit Review ✨
             </button>
+
             </form>
+
             <br>
-            <h3>Thank you so much for leaving a review! This will help other LGBTQIA2S+ folks find safe and affirming providers in their neighborhoods. You rock!!</h3>
+
+            <p>Thank you so much for leaving a review! This will help other LGBTQIA2S+ folks find safe and affirming providers in their neighborhoods. You rock!!</p>
         
     </div>
     
     </template>
-
-<!-- 
-
-what needs to go in here: 
-- ReviewForm component 
-- list of SingleProviderList components
-- competencies: were there gender neutral bathrooms? do intake forms include LGBTQIA2S+ affirming language (such as asking about partners, pronouns, gender identity and sex assigned at birth with options for intersex, trans and nonbinary folks)? did the provider seem comfortable treating and interacting with you? did the provider seem knowledgeable about your unique health needs as an LGBTQIA2S+ person? did the support staff (i.e. nurses, dental hygienists, front desk staff) seem comfortable treating and interacting with you? did you feel comfortable receiving care from this provider? did you feel respected by this provider? would you recommend this provider to a friend?
-
--->
