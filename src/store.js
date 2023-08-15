@@ -43,30 +43,31 @@ export const store = reactive({
     calcSummaryStats() {
         if (this.providerReviews.length > 0) {
             this.providerReviews.forEach(function(value,index) {
-                this.summaryStats["rating"].push(value["rating"]),
-                this.summaryStats["emoji_rating"].push(value["emoji_rating"]),
-                this.summaryStats["recommended"].push(value["recommended"]),
-                this.summaryStats["usercomfort"].push(value["usercomfort"]),
-                this.summaryStats["provcomfort"].push(value["provcomfort"]),
-                this.summaryStats["staffcomfort"].push(value["staffcomfort"]),
-                this.summaryStats["provknowledge"].push(value["provknowledge"]),
-                this.summaryStats["misgender"].push(value["misgender"]),
-                this.summaryStats["bathrooms"].push(value["bathrooms"]),
-                this.summaryStats["intake"].push(value["intake"])
+                store.summaryStats["rating"].push(value["rating"]),
+                store.summaryStats["emoji_rating"].push(value["emoji_rating"]),
+                store.summaryStats["recommended"].push(value["recommended"]),
+                store.summaryStats["usercomfort"].push(value["usercomfort"]),
+                store.summaryStats["provcomfort"].push(value["provcomfort"]),
+                store.summaryStats["staffcomfort"].push(value["staffcomfort"]),
+                store.summaryStats["provknowledge"].push(value["provknowledge"]),
+                store.summaryStats["misgender"].push(value["misgender"]),
+                store.summaryStats["bathrooms"].push(value["bathrooms"]),
+                store.summaryStats["intake"].push(value["intake"])
+                console.log("pre stat", store.summaryStats)
             })
-            
             // calculating statistics
-            this.summaryStats["rating"] = mean(this.summaryStats["rating"])
-            this.summaryStats["rating"] = round(this.summaryStats["rating"])
-            this.summaryStats["emoji_rating"] = mode(this.summaryStats["emoji_rating"])
-            this.summaryStats["recommended"] = mode(this.summaryStats["recommended"])
-            this.summaryStats["usercomfort"] = mode(this.summaryStats["usercomfort"])
-            this.summaryStats["provcomfort"] = mode(this.summaryStats["provcomfort"])
-            this.summaryStats["staffcomfort"] = mode(this.summaryStats["staffcomfort"])
-            this.summaryStats["provknowledge"] = mode(this.summaryStats["provknowledge"])
-            this.summaryStats["misgender"] = mode(this.summaryStats["misgender"])
-            this.summaryStats["bathrooms"] = mode(this.summaryStats["bathrooms"])
-            this.summaryStats["intake"] = mode(this.summaryStats["intake"])
+            store.summaryStats["rating"] = mean(store.summaryStats["rating"])
+            store.summaryStats["rating"] = round(store.summaryStats["rating"])
+            store.summaryStats["emoji_rating"] = mode(store.summaryStats["emoji_rating"])
+            store.summaryStats["recommended"] = mode(store.summaryStats["recommended"])
+            store.summaryStats["usercomfort"] = mode(store.summaryStats["usercomfort"])
+            store.summaryStats["provcomfort"] = mode(store.summaryStats["provcomfort"])
+            store.summaryStats["staffcomfort"] = mode(store.summaryStats["staffcomfort"])
+            store.summaryStats["provknowledge"] = mode(store.summaryStats["provknowledge"])
+            store.summaryStats["misgender"] = mode(store.summaryStats["misgender"])
+            store.summaryStats["bathrooms"] = mode(store.summaryStats["bathrooms"])
+            store.summaryStats["intake"] = mode(store.summaryStats["intake"])
+            console.log("post stat", store.summaryStats)
         }
     },
 

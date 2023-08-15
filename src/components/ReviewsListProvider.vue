@@ -1,6 +1,7 @@
 <script setup>
 import { store } from '../store';
 import { onMounted, onUpdated } from 'vue';
+import './reviewslistprovider.css'
 
 //functions
 onMounted(() => store.getReviewsForProvider());
@@ -44,11 +45,11 @@ const handleClick = (reviewData) => {
                 <br>
             </div>
 
+            <h3>
+                Reviews for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:
+            </h3>
+            
             <div class="provider-reviews-list">
-                <h3>
-                    Reviews for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:
-                </h3>
-
                 <ul>
                     <li class="single-provider-review" v-for="(review, index) in store.providerReviews" :key="index">
                     A community member says:
@@ -60,8 +61,8 @@ const handleClick = (reviewData) => {
                     Recommended to a friend?
                     {{ review.recommended ? 'Yes' : 'No' }}
                     <br>
-                    <!--  -->
-                    <div v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="store.currentUser.liked_reviews.includes(review.review_id) ">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
+                    <!-- liked button -->
+                    <div class="like-button" v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="store.currentUser.liked_reviews.includes(review.review_id) ">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
                     </li>
                 </ul>
             </div>
