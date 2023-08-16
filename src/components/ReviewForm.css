@@ -14,7 +14,7 @@
     flex-wrap: nowrap;
     align-items: center;
     background-color: #F7EDE2;
-    max-width: 50%;
+    max-width: 75%;
     margin-top: 1em;
     margin-bottom: 1em;
     padding-bottom: 1em;
@@ -22,7 +22,24 @@
     padding-right: 1em;
     padding-left: 1em;
     border-radius: 15px;
-    font-size: ;
+    border: bevel 1px;
+}
+
+.review-and-ratings {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.description {
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .subnav li a {
@@ -31,5 +48,11 @@
 
 .review-form-container li {
     margin: 10px 0;
+}
+
+.review-form button {
+    padding: 10px;
+    background-color: #F5CAC3;
+
 }
 

@@ -35,8 +35,8 @@ const handleSubmit = () => {
             <h3>Leave a review for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:</h3>
             
             <br>
-
-            <div>
+            <div class="review-and-ratings">
+            <div class="description">
                 <label for="description">Review: </label>      
                 <textarea id="description" v-model="reviewData.description" maxlength="4096" required></textarea>
             </div>
@@ -71,10 +71,10 @@ const handleSubmit = () => {
                     <option>😡</option>
                 </select>
             </div>
-
+            </div>
             <br>
             
-            <h4>Please answer a few quick questions to help others:</h4>
+            <h3>Please answer a few quick questions to help others:</h3>
 
             <br>
 
@@ -145,7 +145,7 @@ const handleSubmit = () => {
             </ul>
             <br>
 
-            <button class="btn btn-outline-dark" type="submit" :disabled="submitted">
+            <button class="btn-btn-outline-dark" type="submit" :disabled="submitted">
                 ✨ Submit Review ✨
             </button>
         </form>
