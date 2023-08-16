@@ -45,11 +45,11 @@ const doLogin = (userData) => {
                 <input id="password" type="password" placeholder="password" v-model="userData.password" required/>
             </div>
             
-            <button class="btn btn-outline-dark, login" type="submit">
+            <button class="button-33" type="submit">
                 Login
             </button>
 
-            <p>Don't have an account? <button><RouterLink to="/register">Register Here</RouterLink></button></p>
+            <p class="toggle-prompt">Don't have an account? <button class="button-33"><RouterLink to="/register">Register Here</RouterLink></button></p>
 
             <p v-if="store.isResponseVisible" class="error-message"> {{ store.responseMessage }}</p>
         </form>

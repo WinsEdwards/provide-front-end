@@ -49,11 +49,11 @@ const handleSubmit = () => {
                 <input id="password" type="password" placeholder="Password" v-model="userData.password" required/>
             </div>
 
-            <button class="btn btn-outline-dark" type="submit">
+            <button class="register button-33" type="submit">
                 Register
             </button>
 
-            <p>Already have an account?<button><RouterLink to="/login">Login Here</RouterLink></button></p>
+            <p class="toggle-prompt">Already have an account? <button class="button-33"><RouterLink to="/login">Login Here</RouterLink></button></p>
 
             <p v-if="store.isResponseVisible" class="error-message"> {{ store.responseMessage }}</p>
         </form>

@@ -48,7 +48,7 @@ const handleClick = (provider) => {
 
                 <div class="submit-button">
                     <label></label>
-                    <button type="submit">search</button>
+                    <button class="button-33" type="submit">search</button>
                 </div>
             </form>
         </div>
