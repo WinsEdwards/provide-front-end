@@ -21,12 +21,17 @@ body {
 }
 header {
     line-height: 2.5;
-    display: flex;
+    display: grid;
+    grid-template-columns: .7fr .5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: left;
     align-items: left;
-    align-content: left;
+    align-content: left; */
     background-color: #f7ede2;
     width: 100vw;
     max-width: 100%;
@@ -50,6 +55,7 @@ header {
     display: flex;
     align-items: right;
     font-size: 1.33rem;
+    float: right;
   }
   
   nav a {

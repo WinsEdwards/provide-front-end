@@ -23,6 +23,9 @@ onUpdated(() => {
     store.getReviewsLikedByUser()
 })
 
+const handleClick = (reviewData) => {
+    store.toggleLike(reviewData)
+}
 
 </script>
 <template>
@@ -71,7 +74,7 @@ onUpdated(() => {
                 Recommended to a friend?
                 {{ review.recommended ? 'Yes' : 'No' }}
                 <br>
-                <button type="button" class="ReviewLikeCount" @click="store.toggleLike(review)">+</button>
+                <div class="like-button" v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="store.currentUser.liked_reviews.includes(review.review_id) ">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
                 </li>
             </ul>
 

@@ -2,6 +2,7 @@
 import {ref, computed} from 'vue'
 import { store } from '../store';
 import { RouterLink} from 'vue-router'
+import '../assets/home.css'
 
 const searchData = {
     firstName : '',

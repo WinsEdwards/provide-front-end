@@ -43,6 +43,8 @@ export const store = reactive({
     calcSummaryStats() {
         if (this.providerReviews.length > 0) {
             this.providerReviews.forEach(function(value,index) {
+                console.log("rating",value["rating"])
+                console.log("summaryStats rating",store.summaryStats["rating"])
                 store.summaryStats["rating"].push(value["rating"]),
                 store.summaryStats["emoji_rating"].push(value["emoji_rating"]),
                 store.summaryStats["recommended"].push(value["recommended"]),
