@@ -9,7 +9,7 @@ import './App.css'
 
 <template>
   <header>
-    <img alt="Provide logo" class="logo" src="@/assets/images/provide_logo_no_bg.png" width="125" height="125" />
+    <img alt="Provide logo" class="logo" src="@/assets/images/provide_header_no_bg.png" width="135" height="45" />
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>

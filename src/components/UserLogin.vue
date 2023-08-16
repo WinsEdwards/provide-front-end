@@ -2,6 +2,7 @@
 import { store } from '../store';
 import { useRouter} from 'vue-router'
 import axios from 'axios';
+import '../assets/login.css'
 
 // variables
 const router = useRouter()
@@ -34,7 +35,7 @@ const doLogin = (userData) => {
     <div login-form-container>
 
         <form name="login-form" @submit.prevent="doLogin(userData)" >
-
+            <h1>Login</h1>
             <div class="mb-3">
                 <label for="username">Username: </label>
                 <input id="username" type="text" placeholder="username" v-model="userData.username" required/>
@@ -44,7 +45,7 @@ const doLogin = (userData) => {
                 <label for="password">Password: </label>
                 <input id="password" type="password" placeholder="password" v-model="userData.password" required/>
             </div>
-
+            
             <button class="btn btn-outline-dark, login" type="submit">
                 Login
             </button>
