@@ -40,36 +40,36 @@ export const store = reactive({
     
     
     // statistics to go with provider reviews
-    calcSummaryStats() {
-        if (this.providerReviews.length > 0) {
-            this.providerReviews.forEach(function(value,index) {
-                store.summaryStats["rating"].push(value["rating"]),
-                store.summaryStats["emoji_rating"].push(value["emoji_rating"]),
-                store.summaryStats["recommended"].push(value["recommended"]),
-                store.summaryStats["usercomfort"].push(value["usercomfort"]),
-                store.summaryStats["provcomfort"].push(value["provcomfort"]),
-                store.summaryStats["staffcomfort"].push(value["staffcomfort"]),
-                store.summaryStats["provknowledge"].push(value["provknowledge"]),
-                store.summaryStats["misgender"].push(value["misgender"]),
-                store.summaryStats["bathrooms"].push(value["bathrooms"]),
-                store.summaryStats["intake"].push(value["intake"])
-                console.log("pre stat", store.summaryStats)
-            })
-            // calculating statistics
-            store.summaryStats["rating"] = mean(store.summaryStats["rating"])
-            store.summaryStats["rating"] = round(store.summaryStats["rating"])
-            store.summaryStats["emoji_rating"] = mode(store.summaryStats["emoji_rating"])
-            store.summaryStats["recommended"] = mode(store.summaryStats["recommended"])
-            store.summaryStats["usercomfort"] = mode(store.summaryStats["usercomfort"])
-            store.summaryStats["provcomfort"] = mode(store.summaryStats["provcomfort"])
-            store.summaryStats["staffcomfort"] = mode(store.summaryStats["staffcomfort"])
-            store.summaryStats["provknowledge"] = mode(store.summaryStats["provknowledge"])
-            store.summaryStats["misgender"] = mode(store.summaryStats["misgender"])
-            store.summaryStats["bathrooms"] = mode(store.summaryStats["bathrooms"])
-            store.summaryStats["intake"] = mode(store.summaryStats["intake"])
-            console.log("post stat", store.summaryStats)
-        }
-    },
+    // calcSummaryStats() {
+    //     // if (this.providerReviews.length > 0) {
+    //     //     this.providerReviews.forEach(function(value,index) {
+    //     //         // store.summaryStats.rating.push(value["rating"]),
+    //     //         store.summaryStats["emoji_rating"].push(value["emoji_rating"]),
+    //     //         store.summaryStats["recommended"].push(value["recommended"]),
+    //     //         store.summaryStats["usercomfort"].push(value["usercomfort"]),
+    //     //         store.summaryStats["provcomfort"].push(value["provcomfort"]),
+    //     //         store.summaryStats["staffcomfort"].push(value["staffcomfort"]),
+    //     //         store.summaryStats["provknowledge"].push(value["provknowledge"]),
+    //     //         store.summaryStats["misgender"].push(value["misgender"]),
+    //     //         store.summaryStats["bathrooms"].push(value["bathrooms"]),
+    //     //         store.summaryStats["intake"].push(value["intake"])
+    //     //         console.log("pre stat", store.summaryStats)
+    //     //     })
+    //     //     // calculating statistics
+    //     //     // store.summaryStats["rating"] = mean(store.summaryStats["rating"])
+    //     //     // store.summaryStats["rating"] = round(store.summaryStats["rating"])
+    //     //     store.summaryStats["emoji_rating"] = mode(store.summaryStats["emoji_rating"])
+    //     //     store.summaryStats["recommended"] = mode(store.summaryStats["recommended"])
+    //     //     store.summaryStats["usercomfort"] = mode(store.summaryStats["usercomfort"])
+    //     //     store.summaryStats["provcomfort"] = mode(store.summaryStats["provcomfort"])
+    //     //     store.summaryStats["staffcomfort"] = mode(store.summaryStats["staffcomfort"])
+    //     //     store.summaryStats["provknowledge"] = mode(store.summaryStats["provknowledge"])
+    //     //     store.summaryStats["misgender"] = mode(store.summaryStats["misgender"])
+    //     //     store.summaryStats["bathrooms"] = mode(store.summaryStats["bathrooms"])
+    //     //     store.summaryStats["intake"] = mode(store.summaryStats["intake"])
+    //     //     console.log("post stat", store.summaryStats)
+    //     // }
+    // },
 
 
     // login functionality
@@ -140,8 +140,9 @@ export const store = reactive({
         .then(response => { 
             store.providerReviews = response.data
             })
-        .then(this.calcSummaryStats())
+        // .then(this.calcSummaryStats())
         .catch((error) => {
+            console.log(error)
             if (error.response.status == 404) {
                 this.createResponseMessage('Be the first to leave a review for this provider!')
             } 
