@@ -7,7 +7,7 @@
     align-content: center;
 }
 
-form {
+.login-form-container form {
     justify-content: center;
     align-content: center;
     display: flex;

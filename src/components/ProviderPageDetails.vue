@@ -1,5 +1,6 @@
 <script setup>
 import { store } from '../store';
+import '../components/ProviderPageDetail.css'
 
 </script>
 
@@ -8,13 +9,14 @@ import { store } from '../store';
 
     <div class="provider-details-header">
       <h1>
-          {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:
+          {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}: 
       </h1>
     </div>
 
     <div class="provider-details-info">
       <ul>
-          <li>{{ store.currentProvider.address_1 }} {{ store.currentProvider.city }}, {{ store.currentProvider.state }} {{ store.currentProvider.zipCode }}</li>
+          <li>{{ store.currentProvider.address_1 }}</li>
+          <li>{{ store.currentProvider.city }}, {{ store.currentProvider.state }} {{ store.currentProvider.zipCode }}</li>
           <li>{{ store.currentProvider.telephone_number }}</li>
       </ul>
     </div>
