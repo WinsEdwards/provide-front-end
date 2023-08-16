@@ -2,6 +2,7 @@
 import { RouterLink} from 'vue-router'
 import { useRouter } from 'vue-router';
 import { store } from '../store';
+import '../assets/registration.css'
 
 // variables
 const router = useRouter()
@@ -23,10 +24,11 @@ const handleSubmit = () => {
 </script>
 
 <template>
-    <div registration-form-container>
+    <div class="registration-form-container">
 
         <form name="registration-form" @submit.prevent="handleSubmit">
-
+            
+            <img src="../assets/images/register-header.png">
             <div class="mb-3">
                 <label for="firstname">First Name: </label>
                 <input id="firstname" type="text" placeholder="First Name" v-model="userData.firstName" required/>

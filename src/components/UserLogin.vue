@@ -32,10 +32,9 @@ const doLogin = (userData) => {
 </script>
 
 <template>
-    <div login-form-container>
-
+    <div class="login-form-container">
         <form name="login-form" @submit.prevent="doLogin(userData)" >
-            <h1>Login</h1>
+            <img src="../assets/images/loginheader.png" alt="login">
             <div class="mb-3">
                 <label for="username">Username: </label>
                 <input id="username" type="text" placeholder="username" v-model="userData.username" required/>

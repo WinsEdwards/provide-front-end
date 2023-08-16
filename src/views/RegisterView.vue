@@ -4,7 +4,6 @@ import UserRegister from '../components/UserRegister.vue'
 
 <template>
     <main>
-        <h1>This is the user registration page</h1>
         <UserRegister></UserRegister>
     </main>
 </template>

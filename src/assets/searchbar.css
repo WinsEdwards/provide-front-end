@@ -1,0 +1,41 @@
+.search-bar-container {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.everyone-deserves .search-form-container {
+    height: 50%;
+    width: 50%;
+    margin-top: 0;
+    text-align: center;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    float: right;
+    justify-content: center;
+}
+
+.search-form-container form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    width: fit-content;
+    padding: 15px;
+    background-color: #84A59D;
+    border-color: #F7EDE2;
+    border-style: double;
+    border-width: 5px;
+    border-radius: 25px;
+    /* box-shadow: 5px 5px ; */
+}
+
+.search-form-container form input {
+    box-shadow: 5px 5px ;
+}
+.search-form-container form button {
+    margin-top: 28px;
+    margin-left: 10px
+}
+
+

@@ -1,4 +1,4 @@
-.login-form-container{
+.registration-form-container{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -7,11 +7,11 @@
     align-content: center;
 }
 
-.login-form-container img {
+.registration-form-container img {
     height: 150px;
     width: 400px;
 }
-.login-form-container form {
+.registration-form-container form {
     justify-content: center;
     align-content: center;
     display: flex;
@@ -31,7 +31,6 @@
     height: 400px;
 }
 
-.login-form-container button {
+.registration-form-container button {
     margin-top: 10px;
 }
-

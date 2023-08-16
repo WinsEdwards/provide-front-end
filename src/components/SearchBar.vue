@@ -1,9 +1,10 @@
 <script setup>
-import {ref, computed} from 'vue'
 import { store } from '../store';
-import { RouterLink} from 'vue-router'
+import { RouterLink, useRouter} from 'vue-router'
 import '../assets/home.css'
+import '../assets/searchbar.css'
 
+const router = useRouter()
 const searchData = {
     firstName : '',
     lastName : '',
@@ -12,7 +13,9 @@ const searchData = {
 }
 
 const handleSearch = () => {
+    router.push('/search')
     store.getProviders(searchData)
+    
 }
 
 const handleClick = (provider) => {
@@ -29,30 +32,33 @@ const handleClick = (provider) => {
         <div class="search-form-container">
             <form name="search-form" @submit.prevent="handleSearch">
                 <div>
-                    <label>First Name:</label>
+                    <label>First Name</label>
                     <input type="text" id="search" placeholder="First Name" v-model="searchData.firstName" required>
                 </div>
 
                 <div>
-                    <label>Last Name:</label>
+                    <label>Last Name</label>
                     <input type="text" id="search" placeholder="Last Name" v-model="searchData.lastName" required>
                 </div>
 
                 <div>
-                    <label>Zip Code:</label>
+                    <label>Zip Code</label>
                     <input type="text" id="search" placeholder="Zip Code" v-model="searchData.zipCode">
                 </div>
 
-                <button type="submit">search</button>
-
+                <div class="submit-button">
+                    <label></label>
+                    <button type="submit">search</button>
+                </div>
             </form>
         </div>
-
+        <div>
         <div class="search-results-list-container" v-for="provider in store.currentProvidersList">
             <p><RouterLink to="/providers/provider" @click="handleClick(provider)">{{  provider.first_name }} {{ provider.last_name }}</RouterLink> {{ provider.provider_type }}</p>
             <p>{{ provider.address_1 }} {{ provider.city }} {{ provider.state }} {{ provider.zipCode}}</p>
             <p>{{ provider.telephone_number }}</p>
         </div> 
+        </div>
 
     </div>
 </template>
