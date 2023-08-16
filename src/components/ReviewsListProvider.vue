@@ -34,7 +34,7 @@ const handleClick = (reviewData) => {
 
         <div v-if="store.providerReviews.length > 0">
 
-            <div class="provider-ratings-container">
+            <!-- <div class="provider-ratings-container">
                 <h3>
                     Average ratings for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:
                 </h3>
@@ -43,28 +43,26 @@ const handleClick = (reviewData) => {
                     <li v-for="(value, key) in store.summaryStats">{{ key }}: {{ value }}</li> 
                 </ul>
                 <br>
-            </div>
-
+            </div> -->
+            <div class="provider-name-container">
             <h3>
-                Reviews for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:
+                {{store.providerReviews.length}} Available Reviews for {{ store.currentProvider.first_name}} {{ store.currentProvider.last_name }}:
             </h3>
+            </div>
             
             <div class="provider-reviews-list">
-                <ul>
-                    <li class="single-provider-review" v-for="(review, index) in store.providerReviews" :key="index">
-                    A community member says:
+                    <div class="single-provider-review" v-for="(review, index) in store.providerReviews" :key="index">
                     "{{ review.description }}"
                     <br>
                     Emoji Rating: 
                     {{ review.emoji_rating }}
                     <br>
-                    Recommended to a friend?
+                    Recommend to a friend?
                     {{ review.recommended ? 'Yes' : 'No' }}
                     <br>
                     <!-- liked button -->
                     <div class="like-button" v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="store.currentUser.liked_reviews.includes(review.review_id) ">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
-                    </li>
-                </ul>
+                    </div>
             </div>
 
         </div>
