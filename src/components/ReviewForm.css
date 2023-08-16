@@ -1,0 +1,35 @@
+.review-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2;
+}
+
+.review-form-container form {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #F7EDE2;
+    max-width: 50%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-radius: 15px;
+    font-size: ;
+}
+
+.subnav li a {
+    font-size: 20;
+}
+
+.review-form-container li {
+    margin: 10px 0;
+}
+

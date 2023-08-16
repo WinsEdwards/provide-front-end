@@ -1,6 +1,7 @@
 <script setup>
 import { store } from '../store';
 import { ref } from 'vue';
+import '../components/ReviewForm.css'
 
 // variables
 const reviewData = {
@@ -73,34 +74,34 @@ const handleSubmit = () => {
 
             <br>
             
-            <h3>Please answer a few quick questions to help others:</h3>
+            <h4>Please answer a few quick questions to help others:</h4>
 
             <br>
 
             <ul>
                 <li>
-                    <label for="recommended">Would you recommend this provider to a friend? </label>
+                    <label for="recommended">🧐 Would you recommend this provider to a friend? </label>
                     <select id="recommended" v-model.number="reviewData.recommended">
                         <option value=1>Yes</option>
                         <option value=0>No</option>
                     </select>       
                 </li>
                 <li>
-                    <label for="user-comfort">Did you feel comfortable and respected while receiving care from this provider? </label>
+                    <label for="user-comfort">🧐 Did you feel comfortable and respected while receiving care from this provider? </label>
                     <select id="user-comfort" v-model.number="reviewData.usercomfort" required>
                         <option value=1>Yes</option>
                         <option value=0>No</option>
                     </select>         
                 </li>
                 <li>
-                    <label for="prov-comfort">Did the provider seem comfortable treating and/or interacting with you? </label>
+                    <label for="prov-comfort">🧐 Did the provider seem comfortable treating and/or interacting with you? </label>
                     <select id="prov-comfort" v-model.number="reviewData.provcomfort" required>
                         <option value=1>Yes</option>
                         <option value=0>No</option>
                     </select>       
                 </li>           
                 <li>
-                    <label for="staff-comfort">If applicable, did the support staff (i.e. nurses, dental hygienists, schedulers and front desk staff) seem comfortable treating and/or interacting with you? </label>
+                    <label for="staff-comfort">🧐 If applicable, did the support staff (i.e. nurses, dental hygienists, schedulers and front desk staff) seem comfortable treating and/or interacting with you? </label>
                     <select id="staff-comfort" v-model="reviewData.staffcomfort" required>
                         <option value=1>Yes</option>
                         <option value=0>No</option>
@@ -108,7 +109,7 @@ const handleSubmit = () => {
                     </select>       
                 </li>
                 <li>
-                    <label for="prov-knowledge">If applicable, did this provider seem knowledgeable about your unique health needs as an LGBTQIA2S+ person (i.e. PrEP, HIV care, multi-site STI screenings, routine cancer screenings, gender affirming care and experiences of stigma)? </label>
+                    <label for="prov-knowledge">🧐 If applicable, did this provider seem knowledgeable about your unique health needs as an LGBTQIA2S+ person (i.e. PrEP, HIV care, multi-site STI screenings, routine cancer screenings, gender affirming care and experiences of stigma)? </label>
                     <select id="prov-knowledge" v-model.number="reviewData.provknowledge" required>
                         <option value=1>Yes</option>
                         <option value=0>No</option>
@@ -116,7 +117,7 @@ const handleSubmit = () => {
                     </select>        
                 </li>     
                 <li>
-                    <label for="intake">Do intake forms include LGBTQIA2S+ affirming language (such as asking about partners, pronouns, preferred name, gender identity and sex assigned at birth with options for intersex, trans and nonbinary folks)? </label>
+                    <label for="intake">🧐 Do intake forms include LGBTQIA2S+ affirming language (such as asking about partners, pronouns, preferred name, gender identity and sex assigned at birth with options for intersex, trans and nonbinary folks)? </label>
                     <select id="intake" v-model.number="reviewData.intake" required>
                         <option value=1>Yes, some of these</option>
                         <option value=2>Yes, all of these</option>
@@ -124,7 +125,7 @@ const handleSubmit = () => {
                     </select>         
                 </li>
                 <li>
-                    <label for="misgender">If applicable, did the provider and support staff consistently use your preferred name and pronouns? </label>
+                    <label for="misgender">🧐 If applicable, did the provider and support staff consistently use your preferred name and pronouns? </label>
                     <select id="misgender" v-model.number="reviewData.misgender" required>
                         <option value=1>Yes, the provider</option>
                         <option value=2>Yes, support staff</option>
@@ -134,7 +135,7 @@ const handleSubmit = () => {
                     </select>          
                 </li>
                 <li>
-                    <label for="bathrooms">If applicable, does the office have gender neutral bathrooms? </label>
+                    <label for="bathrooms">🧐 If applicable, does the office have gender neutral bathrooms? </label>
                     <select id="bathrooms" v-model.number="reviewData.bathrooms" required>
                         <option value=1>Yes</option>
                         <option value=0>No</option>
@@ -147,12 +148,9 @@ const handleSubmit = () => {
             <button class="btn btn-outline-dark" type="submit" :disabled="submitted">
                 ✨ Submit Review ✨
             </button>
-
-            </form>
-
-            <br>
-
-            <p>Thank you so much for leaving a review! This will help other LGBTQIA2S+ folks find safe and affirming providers in their neighborhoods. You rock!!</p>
+        </form>
+        
+        <p v-if="submitted">🦋 Thank you so much for leaving a review, {{ store.currentUser.first_name }}! This will help other LGBTQIA2S+ folks find safe and affirming providers in their neighborhoods. You rock!! 🌺</p>
         
     </div>
     
