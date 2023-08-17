@@ -18,6 +18,35 @@ const maz_info = {
 </script>
 
 <template>
+  <div class="provide-explanation">
+    <h2>Why Provide?</h2>
+    <h4>We created Provide because we know how hard it can be to locate health care providers who create a safe and affirming environment for LGBTQIA2S+ folks. When we say LGBTQIA2S+, we mean:</h4> 
+    <ul>
+      <li>lesbian</li>
+      <li>gay</li>
+      <li>bisexual</li>
+      <li>transgender</li>
+      <li>queer + questioning</li>
+      <li>intersex</li>
+      <li>asexual</li>
+      <li>Two-spirit</li>
+      <li>+ infinite ✨magical✨ expressions of diverse genders and sexualities</li>
+    </ul>
+    <br>
+    <h4>Provide allows you to search and review any provider with an NPI (National Provider Identification) number, which includes any health care provider who is covered by HIPAA (the Health Insurance Portability and Accountability Act) and bills federally funded programs for health services. Basically, any health care provider who bills any kind of health insurance (including Medicare and Medicaid) will have an NPI number, including:</h4>
+    <ul>
+      <li>doctors</li>
+      <li>physician assistants</li>
+      <li>nurse practitioners</li>
+      <li>physical and occupational therapists</li>
+      <li>dentists</li>
+      <li>optometrists</li>
+      <li>social workers, counselors and therapists</li>
+      <li>psychiatrists</li>
+      <li>and more!</li>
+    </ul>
+    
+  </div>
   <div class="about-us-container">
     <div class="about-us-img-container">
       <img class="about-us-img" src="../assets/images/about-us-yellow.png" alt="big, dark green bubble letter text that says about us">
@@ -25,7 +54,7 @@ const maz_info = {
     <div class="winslow">
       <div class="about-us-child-1">
         <img alt="photo of team member"
-        src="src/assets/images/winslow.jpg"
+        src="../assets/images/winslow.jpg"
         height="" width="275">
       </div>
       
@@ -39,7 +68,7 @@ const maz_info = {
     <div class="maz">
       <div class="about-us-child-1">
         <img alt="photo of team member"
-        src="src/assets/images/maz.jpg"
+        src="../assets/images/maz.jpg"
         height="" width="275">
       </div>
       
