@@ -39,7 +39,7 @@ const maz_info = {
         <li>classism</li>
         <li>etc.</li>
       </ul>
-      <h4> We are actively thinking about standardized ways to encompass these important aspects of experiences with providers into reviews. For now, if it feels comfortable to include, please share in your review whatever feels relevant. Remember that your reviews are seen anonymously, i.e. other users don't see a username or any other identifying information attached to the reviews you post on Provide.</h4>
+      <h4> We are actively thinking about how to include these important aspects of provider experiences into reviews. For now, if it feels comfortable, please share in your review whatever feels relevant. Remember that your reviews are seen anonymously, i.e. other users don't see a username or any other identifying information attached to the reviews you post on Provide.</h4>
     </div>
   </div>
   
