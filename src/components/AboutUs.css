@@ -32,9 +32,19 @@
     padding-bottom: 0;
 }
 
+.provide-explanation-container {
+    /* display: flex; */
+    background-color: #84A59D;
+    border-radius: 15px;
+}
 
 .provide-explanation {
     padding: 1em;
+    margin: 1em;
+    background-color: #f6BD60;
+    border-radius: 15px;
+    /* border: solid salmon; */
+    
 }
 
 .winslow {
@@ -57,6 +67,7 @@
     border: solid 5px #84A59D;
     align-self: center;
     width:fit-content;
+    back
 }
 
 .about-us-child-1 img {

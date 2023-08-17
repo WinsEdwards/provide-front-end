@@ -18,34 +18,65 @@ const maz_info = {
 </script>
 
 <template>
-  <div class="provide-explanation">
-    <h2>Why Provide?</h2>
-    <h4>We created Provide because we know how hard it can be to locate health care providers who create a safe and affirming environment for LGBTQIA2S+ folks. When we say LGBTQIA2S+, we mean:</h4> 
-    <ul>
-      <li>lesbian</li>
-      <li>gay</li>
-      <li>bisexual</li>
-      <li>transgender</li>
-      <li>queer + questioning</li>
-      <li>intersex</li>
-      <li>asexual</li>
-      <li>Two-spirit</li>
-      <li>+ infinite ✨magical✨ expressions of diverse genders and sexualities</li>
-    </ul>
-    <br>
-    <h4>Provide allows you to search and review any provider with an NPI (National Provider Identification) number, which includes any health care provider who is covered by HIPAA (the Health Insurance Portability and Accountability Act) and bills federally funded programs for health services. Basically, any health care provider who bills any kind of health insurance (including Medicare and Medicaid) will have an NPI number, including:</h4>
-    <ul>
-      <li>doctors</li>
-      <li>physician assistants</li>
-      <li>nurse practitioners</li>
-      <li>physical and occupational therapists</li>
-      <li>dentists</li>
-      <li>optometrists</li>
-      <li>social workers, counselors and therapists</li>
-      <li>psychiatrists</li>
-      <li>and more!</li>
-    </ul>
-    
+  <div class="provide-explanation-container">
+    <div class="provide-explanation">
+      <h2>Why Provide?</h2>
+      <h4>We created Provide because we know how hard it can be to locate health care providers who create a safe and affirming environment for diverse LGBTQIA2S+ folks. When we say LGBTQIA2S+, we mean:</h4> 
+      <ul>
+        <li>lesbian</li>
+        <li>gay</li>
+        <li>bisexual</li>
+        <li>transgender</li>
+        <li>queer + questioning</li>
+        <li>intersex</li>
+        <li>asexual</li>
+        <li>Two-spirit</li>
+        <li>+ infinite ✨magical✨ expressions of diverse genders and sexualities</li>
+      </ul>
+    </div>
+  </div>
+  <div class="provide-explanation-container">
+    <div class="provide-explanation">
+      <h2>How does Provide work?</h2>
+      <h4>Provide allows you to search and review any provider with an NPI (National Provider Identification) number, which includes any health care provider who accepts any kind of health insurance (including Medicare and Medicaid), including:</h4>
+      <ul>
+        <li>doctors</li>
+        <li>physician assistants</li>
+        <li>nurse practitioners</li>
+        <li>physical and occupational therapists</li>
+        <li>dentists</li>
+        <li>optometrists</li>
+        <li>social workers, counselors and therapists</li>
+        <li>psychiatrists</li>
+        <li>and more!</li>
+      </ul>
+    </div>
+  </div>
+  <div class="provide-explanation-container">
+    <div class="provide-explanation">
+      <h2>What should I know?</h2>
+      <h4>On Provide, you can post and delete your own reviews. You can also read and like others reviews. Any reviews you post are posted anonymously, which means that other users cannot see the username or any other identifying info of the person who posted a given review. On your account page, you can see and delete any review you have written and you can also see any reviews you have liked. To create a new review, search a provider and then fill in your review info and click submit!</h4>
+    </div>
+  </div>
+  <div class="provide-explanation-container">
+    <div class="provide-explanation">
+      <h2>What are future plans for Provide?</h2>
+      <h4>We recognize that individual experiences with a provider are impacted by structural systems of power and oppression such as:</h4>
+      <ul>
+        <li>racism and colonialism</li>
+        <li>colorism and featurism</li>
+        <li>sexism and misogynoir</li>
+        <li>transphobia and cissexism</li>
+        <li>transmisogyny and transmysogynoir</li>
+        <li>homophobia and heteronormativity</li>
+        <li>sizeism and fatphobia</li>
+        <li>ableism</li>
+        <li>classism</li>
+        <li>citizenship status</li>
+        <li>and more ☹️</li>
+      </ul>
+      <h4> We are actively thinking about ways to encompass these important aspects of experiences with providers that may be helpful for other community members as they make decisions about who they want to see. For now, if it feels comfortable to include, please share in your review whatever feels relevant. Remember that your reviews are seen anonymously, i.e. other users don't see a username or any other identifying information attached to the reviews you post on Provide.</h4>
+    </div>
   </div>
   <div class="about-us-container">
     <div class="about-us-img-container">
