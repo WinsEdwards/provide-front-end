@@ -11,6 +11,10 @@
     /* border: solid; */
 }
 
+.provide-explanation {
+    padding: 1em;
+}
+
 .winslow {
     display: flex;
     width: 100%;
