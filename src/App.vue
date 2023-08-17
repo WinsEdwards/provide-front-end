@@ -10,17 +10,20 @@ import './App.css'
 
 <template>
   <header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <RouterLink to="/"><img alt="Provide logo" class="logo" src="@/assets/images/provide_header_no_bg.png" width="135" height="45" /> </RouterLink>
     <div></div>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/search">Search</RouterLink>
-        <RouterLink to="/providers">Providers</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/user" v-if="store.isLoggedIn">Account</RouterLink>
-        <button v-if="store.isLoggedIn" @click="store.doLogout()"><RouterLink to ="/login">Logout</RouterLink></button>
-        <RouterLink to="/login" v-else>Login</RouterLink>
+        <ul>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/search">Search</RouterLink>
+          <RouterLink to="/providers">Providers</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/user" v-if="store.isLoggedIn">Account</RouterLink>
+          <button v-if="store.isLoggedIn" @click="store.doLogout()"><RouterLink to ="/login">Logout</RouterLink></button>
+          <RouterLink to="/login" v-else>Login</RouterLink>
+        </ul>
       </nav>
     </div>
   </header>

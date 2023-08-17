@@ -3,6 +3,7 @@ import { store } from '../store';
 import { RouterLink, useRouter} from 'vue-router'
 import '../assets/home.css'
 import '../assets/searchbar.css'
+import '../assets/searchview.css'
 
 const router = useRouter()
 const searchData = {
@@ -53,10 +54,15 @@ const handleClick = (provider) => {
             </form>
         </div>
         <div>
-        <div class="search-results-list-container" v-for="provider in store.currentProvidersList">
-            <p><RouterLink to="/providers/provider" @click="handleClick(provider)">{{  provider.first_name }} {{ provider.last_name }}</RouterLink> {{ provider.provider_type }}</p>
-            <p>{{ provider.address_1 }} {{ provider.city }} {{ provider.state }} {{ provider.zipCode}}</p>
-            <p>{{ provider.telephone_number }}</p>
+        <div class="search-results-list-container">
+            <div class="single-search-result"  v-for="provider in store.currentProvidersList">
+                <p><RouterLink to="/providers/provider" @click="handleClick(provider)"><h2>{{  provider.first_name }} {{ provider.last_name }}</h2></RouterLink> {{ provider.provider_type }}</p>
+                <br>
+                <p>{{ provider.address_1 }}</p> 
+                <p>{{ provider.city }} {{ provider.state }} {{ provider.zipCode}}</p>
+                <br>
+                <p>{{ provider.telephone_number }}</p>
+            </div>
         </div> 
         </div>
 

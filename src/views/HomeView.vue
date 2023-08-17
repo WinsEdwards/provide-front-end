@@ -7,7 +7,6 @@ import '../assets/searchbar.css'
 <template>
   <main class="home-view-container">
     <img class="home-view-img" src="../assets/images/Three friends of varying genders taking a selfie in a park 2.jpg">
-    <div></div>
     <div class="everyone-deserves">
       <img class="everyone-deserves-img" src="../assets/images/everyonedeserves-final.png">
       <SearchBar class="home-view-search-bar"></SearchBar>

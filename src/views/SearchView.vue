@@ -1,11 +1,11 @@
 <script setup>
 import SearchBar from '../components/SearchBar.vue'
+import '../assets/searchview.css'
 </script>
 
 <template>
     <main>
-        <h1>Search for a provider here:</h1>
-        <SearchBar key="searchPage"></SearchBar>
+        <SearchBar class="search-view-search-bar" key="searchPage"></SearchBar>
     </main>
 </template>
 

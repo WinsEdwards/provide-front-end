@@ -1,8 +1,3 @@
-/* * {
-  /* margin: 0px;
-  padding-top: 0px; */
-  /* border: dashed;  */
-   /* } */
 
 #app {
   margin: 0px;
@@ -11,14 +6,11 @@
   max-height: 100%;
 }
 
-logo {
-  padding-left: 0;
-  margin-left: 0;
-}
 body {
   margin: 0px;
   background-color: #F5CAC3;
 }
+
 header {
     line-height: 2.5;
     display: grid;
@@ -26,12 +18,6 @@ header {
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: left;
-    align-items: left;
-    align-content: left; */
     background-color: #f7ede2;
     width: 100vw;
     max-width: 100%;
@@ -50,14 +36,24 @@ header {
     margin-left: 20px;
     margin-top: 8px;
   }
+
+  .logo :hover{
+    background-color: #F7EDE2 !important;
+  }
   
-  nav {
+  nav ul{
     display: flex;
     align-items: right;
     font-size: 1.33rem;
     float: right;
   }
   
+  nav ol {
+    display: none;
+    float: right;
+  } 
+
+
   nav a {
     display: inline-block;
     color: #3c534d;
@@ -68,9 +64,31 @@ header {
   nav a:first-of-type {
     border: 0;
   }
+
+  nav a:hover {
+    background-color: #F28482 !important;
+  }
+
+
   
   /* Optional: Add background color or other styling to the navigation ribbon */
   nav {
     background-color: var(#f7ede2);
     /* Add any other styling you want for the navigation ribbon */
+  }
+
+  form input {
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  @media (max-width: 960px) {
+    nav ul     { font-size: smaller; }
+    .home-view-img {display: none;}
+    .home-view-container .everyone-deserves img {width: ; 
+    ; }
+    .everyone-deserves .search-bar-container {
+        align-items: flex-start;
+    }
+    .search-form-container {width: 20%;}
   }
