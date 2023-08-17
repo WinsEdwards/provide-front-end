@@ -1,1 +1,0 @@
-import{o as e,c as a,d as c,_ as r}from"./index-9ca8cac5.js";const o={__name:"SearchView",setup(s){return(t,_)=>(e(),a("main",null,[c(r,{class:"search-view-search-bar",key:"searchPage"})]))}};export{o as default};
