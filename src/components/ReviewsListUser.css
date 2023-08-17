@@ -1,13 +1,40 @@
-.user-reviews-container {
-    display: flex;
-    margin: 0;
-    justify-content: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
- } 
 
+.user-reviews-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 50px;
+    margin: 0;
+} 
+
+.written-reviews-container {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: #F7EDE2;
+    margin: 2%;
+    border-radius: 65px;
+    padding: 30px;
+}
+
+.liked-reviews-container {
+    grid-area: 1 / 2 / 2 / 3;
+    background-color: #F7EDE2;
+    margin: 2%;
+    border-radius: 65px;
+    padding: 30px;
+
+}
+
+.written-reviews-list {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.liked-reviews-list {
+    display: flex;
+    flex-flow: wrap;
+}
 .single-user-review {
-  width: 325px;
+  width: 200px;
   height: fit-content;
   background-color: #F6BD60;
   /* border: solid #F6BD60 3px; */

@@ -145,7 +145,7 @@ const handleSubmit = () => {
             </ul>
             <br>
 
-            <button class="btn-btn-outline-dark" type="submit" :disabled="submitted">
+            <button class="button-33" type="submit" :disabled="submitted">
                 ✨ Submit Review ✨
             </button>
         </form>

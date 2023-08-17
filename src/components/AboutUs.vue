@@ -19,10 +19,6 @@ const maz_info = {
 
 <template>
   <div class="provide-explanation-container">
-    <div class="what-should-I-know">
-      <h2>What should I know?</h2>
-      <h4>On Provide, you can post and delete your own reviews. You can also read and like others reviews. Any reviews you post are posted anonymously, which means that other users cannot see the username or any other identifying info of the person who posted a given review. On your account page, you can see and delete any review you have written and you can also see any reviews you have liked. To create a new review, search a provider and then fill in your review info and click submit!</h4>
-    </div>
     <div class="future-plans">
       <h2>What are future plans for Provide?</h2>
       <h4>We recognize that individual experiences with a provider are impacted by structural systems of power and oppression such as:</h4>

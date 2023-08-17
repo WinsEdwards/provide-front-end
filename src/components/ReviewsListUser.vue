@@ -27,8 +27,10 @@ const handleClick = (reviewData) => {
             </h3>
 
             <br>
-            <ul>
+            <div v-if="store.userWrittenReviews.length === 0">You have no written reviews. Search a provider to write one.</div>
+            <ul v-else class="written-reviews-list">
                 <li class="single-user-review" v-for="(review, index) in store.userWrittenReviews" :key="index">
+                You said:
                 "{{ review.description }}"
                 <br>
                 Emoji Rating: 
@@ -37,7 +39,7 @@ const handleClick = (reviewData) => {
                 Recommended to a friend?
                 {{ review.recommended ? 'Yes' : 'No' }}
                 <br>
-                <button @click="store.deleteReview(review.review_id)">Delete</button>
+                <button class="button-33" @click="store.deleteReview(review.review_id)">Delete</button>
                 </li>
             </ul>
         </div>
@@ -50,10 +52,9 @@ const handleClick = (reviewData) => {
             </h3>
 
             <br>
-
-            <ul>
+            <div v-if="store.userLikedReviews.length === 0">You have no liked reviews. Visit a provider to like a review.</div>
+            <ul class="liked-reviews-list">
                 <li class="single-user-review" v-for="(review, index) in store.userLikedReviews" :key="index">
-                You said:
                 "{{ review.description }}"
                 <br>
                 Emoji Rating: 

@@ -66,6 +66,7 @@
     align-content: center;
     background-color: #F6BD60;
     border-radius: 65px;
+    /* background-image: url('../assets/images/checker-background.png'); */
 }
 
 .search-view-container .search-bar-container {
