@@ -22,7 +22,7 @@ const maz_info = {
     <div class="winslow">
       <div class="about-us-child-1">
         <img alt="photo of team member"
-        src="src/assets/images/winslow.jpg"
+        src="../assets/images/winslow.jpg"
         height="" width="275">
       </div>
       
@@ -37,7 +37,7 @@ const maz_info = {
     <div class="maz">
       <div class="about-us-child-1">
         <img alt="photo of team member"
-        src="src/assets/images/maz.jpg"
+        src="../assets/images/maz.jpg"
         height="" width="275">
       </div>
       
