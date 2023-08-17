@@ -42,6 +42,7 @@
     border-radius: 65px;
 }
 
+
 .about-us-container {
     display: flex;
     width: 100%;
@@ -62,7 +63,6 @@
     margin: auto;
     margin-bottom: 2%;
     padding-bottom: 0;
-    border-radius: 25px;
     
 }
 .about-us-img-container {
@@ -71,7 +71,6 @@
     margin: auto;
     width: 100%;
     margin-bottom: 2%;
-    border-radius: 25px;
     background-color: #f6BD60;
     padding-bottom: 0;
 }
@@ -79,7 +78,7 @@
 .winslow {
     display: flex;
     width: 100%;
-    background-color: #84A59D;
+    /* background-color: #84A59D; */
     /* border: solid salmon; */
 }
 
@@ -88,18 +87,18 @@
     flex-direction: row-reverse;
     text-align: right;
     width: 100%;
-    background-color: #84A59D;
+    /* background-color: #84A59D; */
 }
 
 .about-us-child-1 {
     padding: .5em;
-    border: solid 5px #84A59D;
+    /* border: solid 5px #84A59D; */
     align-self: center;
     width:fit-content;
 }
 
 .about-us-child-1 img {
-    border-radius: 15%;
+    border-radius: 65px;
 }
 
 .about-us-child-2 {

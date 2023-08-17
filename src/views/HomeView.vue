@@ -20,8 +20,10 @@ import '../assets/searchbar.css'
       <!-- <div class="laptop-search-img"><img src="../assets/images/laptop-use.jpg"></div> -->
 
       <div class="lgbtq-explanation">
-        <h4>We created Provide because we know how hard it can be to locate health care providers who create a safe and affirming environment for LGBTQIA2S+ folks. When we say LGBTQIA2S+, we mean:</h4> 
-        <ul>
+        <h4>We created Provide because we know how hard it can be to locate health care providers who create a safe and affirming environment for LGBTQIA2S+ folks. When we say LGBTQIA2S+, we mean:
+          lesbian, gay, bisexual, transgender, queer + questioning, intersex, asexual, Two-spirit, + all of the infinite ✨magical✨ expressions of diverse genders and sexualities that exist!
+        </h4> 
+        <!-- <ul>
           <li>lesbian</li>
           <li>gay</li>
           <li>bisexual</li>
@@ -31,13 +33,14 @@ import '../assets/searchbar.css'
           <li>asexual</li>
           <li>Two-spirit</li>
           <li>+ infinite ✨magical✨ expressions of diverse genders and sexualities</li>
-        </ul>
+        </ul> -->
       </div>
       
       <div class="what-provide-is">
-        <h2>How does Provide work?</h2>
-        <h4>Provide allows you to search and review any provider with an NPI (National Provider Identification) number, which includes any health care provider who accepts any kind of health insurance (including Medicare and Medicaid), including:</h4>
-        <ul>
+        <h4>Provide allows you to search and review any provider with an NPI (National Provider Identification) number, which includes any health care provider who accepts any kind of health insurance (including Medicare and Medicaid), including:
+          doctors, physicians assistancs, nurse practitioners, physical and occupational therapists, dentists, optometrists, social workers, counselors and therapists, psychiatrists and more.
+        </h4>
+        <!-- <ul>
           <li>doctors</li>
           <li>physician assistants</li>
           <li>nurse practitioners</li>
@@ -47,9 +50,9 @@ import '../assets/searchbar.css'
           <li>social workers, counselors and therapists</li>
           <li>psychiatrists</li>
           <li>and more!</li>
-        </ul>
+        </ul> -->
       </div>
-      
+
     </div>
   </main>
 </template>

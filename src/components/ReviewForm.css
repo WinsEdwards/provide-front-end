@@ -6,6 +6,9 @@
     line-height: 2;
 }
 
+.review-form-container form input{
+    border-radius: 65px;
+}
 .review-form-container form {
     justify-content: center;
     align-content: center;
@@ -21,7 +24,7 @@
     padding-top: 1em;
     padding-right: 1em;
     padding-left: 1em;
-    border-radius: 15px;
+    border-radius: 65px;
     border: bevel 1px;
 }
 
