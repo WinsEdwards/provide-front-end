@@ -39,6 +39,22 @@
     border-radius: 65px;
     padding: 20px;
 }
+
+.what-should-I-know {
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: #F7EDE2;
+    margin: 2%;
+    border-radius: 65px;
+    padding: 20px;
+}
+
+.future-plans {
+    grid-area: 3 / 2 / 4 / 3;
+    background-color: #F7EDE2;
+    margin: 2%;
+    border-radius: 65px;
+    padding: 20px;
+}
 .about-us-container {
     display: flex;
     width: 100%;
@@ -62,7 +78,7 @@
     border-radius: 25px;
     
 }
-.about-us-container .about-us-img-container {
+.about-us-img-container {
     float: center;
     text-align: center;
     margin: auto;
@@ -73,24 +89,6 @@
     padding-bottom: 0;
 }
 
-.provide-explanation-container {
-    /* display: flex; */
-    background-color: #84A59D;
-    border-radius: 15px;
-}
-
-<<<<<<< HEAD
-=======
-.provide-explanation {
-    padding: 1em;
-    margin: 1em;
-    background-color: #f6BD60;
-    border-radius: 15px;
-    /* border: solid salmon; */
-    
-}
-
->>>>>>> 78e147181b478e0e14323449e4f80d23e74fe1bc
 .winslow {
     display: flex;
     width: 100%;
@@ -111,7 +109,6 @@
     border: solid 5px #84A59D;
     align-self: center;
     width:fit-content;
-    back
 }
 
 .about-us-child-1 img {
