@@ -27,14 +27,16 @@
 .written-reviews-list {
     display: flex;
     flex-flow: wrap;
+    justify-content: center;
 }
 
 .liked-reviews-list {
     display: flex;
     flex-flow: wrap;
+    justify-content: center;
 }
 .single-user-review {
-  width: 200px;
+  width: 250px;
   height: fit-content;
   background-color: #F6BD60;
   /* border: solid #F6BD60 3px; */
