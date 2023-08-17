@@ -20,12 +20,12 @@ const maz_info = {
 <template>
   <div class="provide-explanation-container">
     <div class="what-should-I-know">
-      <h2>What should I know?</h2>
-      <h4>On Provide, you can post and delete your own reviews. You can also read and like others reviews. Any reviews you post are posted anonymously, which means that other users cannot see the username or any other identifying info of the person who posted a given review. On your account page, you can see and delete any review you have written and you can also see any reviews you have liked. To create a new review, search a provider and then fill in your review info and click submit!</h4>
+      <h2>What should I know about using Provide?</h2>
+      <h4>On Provide, you can post and delete your own reviews. You can also read and like others' reviews. Any reviews you submit are posted anonymously, which means that other users cannot see the username or any other identifying info of the person who wrote a given review. On your account page, you can see and delete any reviews you have written and you can also see any reviews you have liked. To like a review, click the heart button next to the like count at the bottom of a review. To create a new review, search a provider from the search page or select a provider from the providers page, fill in your review info and then click submit!</h4>
     </div>
     <div class="future-plans">
-      <h2>What are future plans for Provide?</h2>
-      <h4>We recognize that individual experiences with a provider are impacted by structural systems of power and oppression such as:</h4>
+      <h2>Any future plans for Provide?</h2>
+      <h4>We recognize that individual experiences with a provider are impacted by structural systems of power and oppression including:</h4>
       <ul>
         <li>racism and colonialism</li>
         <li>colorism and featurism</li>
@@ -34,12 +34,12 @@ const maz_info = {
         <li>transmisogyny and transmysogynoir</li>
         <li>homophobia and heteronormativity</li>
         <li>sizeism and fatphobia</li>
-        <li>ableism</li>
-        <li>classism</li>
+        <li>ableism and ageism</li>
         <li>citizenship status</li>
-        <li>and more ☹️</li>
+        <li>classism</li>
+        <li>etc.</li>
       </ul>
-      <h4> We are actively thinking about ways to encompass these important aspects of experiences with providers that may be helpful for other community members as they make decisions about who they want to see. For now, if it feels comfortable to include, please share in your review whatever feels relevant. Remember that your reviews are seen anonymously, i.e. other users don't see a username or any other identifying information attached to the reviews you post on Provide.</h4>
+      <h4> We are actively thinking about standardized ways to encompass these important aspects of experiences with providers into reviews. For now, if it feels comfortable to include, please share in your review whatever feels relevant. Remember that your reviews are seen anonymously, i.e. other users don't see a username or any other identifying information attached to the reviews you post on Provide.</h4>
     </div>
   </div>
   
