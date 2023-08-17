@@ -49,7 +49,7 @@ const doLogin = (userData) => {
                 Login
             </button>
 
-            <p class="toggle-prompt login">Don't have an account? <button class="button-33"><RouterLink to="/register">Register Here</RouterLink></button></p>
+            <p class="toggle-prompt login">Don't have an account? <RouterLink to="/register"><button class="button-33">Register Here</button></RouterLink></p>
 
             <p v-if="store.isResponseVisible" class="error-message"> {{ store.responseMessage }}</p>
         </form>

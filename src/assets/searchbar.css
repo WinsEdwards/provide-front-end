@@ -38,11 +38,21 @@
     width:80%;
     box-sizing: border-box;
 }
+
 .everyone-deserves .search-form-container form button {
     margin-top: 20%;
     margin-bottom:20%;
     margin-left: 10px
 }
+
+.everyone-deserves .search-results-list-container {
+    display: none;
+}
+
+.providers-list-view .search-results-list-container {
+    display: none;
+}
+
 
 /* CSS */
 .button-33 {

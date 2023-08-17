@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import { store } from './store'
 import './App.css'
 
+
 // functions
 
 
@@ -16,13 +17,13 @@ import './App.css'
     <div class="wrapper">
       <nav>
         <ul>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/search">Search</RouterLink>
-          <RouterLink to="/providers">Providers</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-          <RouterLink to="/user" v-if="store.isLoggedIn">Account</RouterLink>
-          <button v-if="store.isLoggedIn" @click="store.doLogout()"><RouterLink to ="/login">Logout</RouterLink></button>
-          <RouterLink to="/login" v-else>Login</RouterLink>
+          <RouterLink to="/">home</RouterLink>
+          <RouterLink to="/search">search</RouterLink>
+          <RouterLink to="/providers">providers</RouterLink>
+          <RouterLink to="/about">about</RouterLink>
+          <RouterLink to="/user" v-if="store.isLoggedIn">account</RouterLink>
+          <RouterLink to ="/login" v-if="store.isLoggedIn" @click="store.doLogout()"><button class="button-33 logout">logout</button></RouterLink>
+          <RouterLink to="/login" v-else><button class="button-33">login</button></RouterLink>
         </ul>
       </nav>
     </div>

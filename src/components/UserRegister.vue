@@ -53,7 +53,7 @@ const handleSubmit = () => {
                 Register
             </button>
 
-            <p class="toggle-prompt">Already have an account? <button class="button-33"><RouterLink to="/login">Login Here</RouterLink></button></p>
+            <p class="toggle-prompt">Already have an account? <RouterLink to="/login"><button class="button-33">Login Here</button></RouterLink></p>
 
             <p v-if="store.isResponseVisible" class="error-message"> {{ store.responseMessage }}</p>
         </form>

@@ -33,18 +33,18 @@ const handleClick = (provider) => {
         <div class="search-form-container">
             <form name="search-form" @submit.prevent="handleSearch">
                 <div>
-                    <label>First Name</label>
-                    <input type="text" id="search" placeholder="First Name" v-model="searchData.firstName" required>
+                    <label>first name</label>
+                    <input type="text" id="search" placeholder="first name" v-model="searchData.firstName" required>
                 </div>
 
                 <div>
-                    <label>Last Name</label>
-                    <input type="text" id="search" placeholder="Last Name" v-model="searchData.lastName" required>
+                    <label>last name</label>
+                    <input type="text" id="search" placeholder="last name" v-model="searchData.lastName" required>
                 </div>
 
                 <div>
-                    <label>Zip Code</label>
-                    <input type="text" id="search" placeholder="Zip Code" v-model="searchData.zipCode">
+                    <label>zip code</label>
+                    <input type="text" id="search" placeholder="zip code" v-model="searchData.zipCode">
                 </div>
 
                 <div class="submit-button">
@@ -56,10 +56,10 @@ const handleClick = (provider) => {
         <div>
         <div class="search-results-list-container">
             <div class="single-search-result"  v-for="provider in store.currentProvidersList">
-                <p><RouterLink to="/providers/provider" @click="handleClick(provider)"><h2>{{  provider.first_name }} {{ provider.last_name }}</h2></RouterLink> {{ provider.provider_type }}</p>
+                <p><RouterLink to="/providers/provider" @click="handleClick(provider)"><h2>{{  provider.first_name.toLowerCase() }} {{ provider.last_name.toLowerCase() }}</h2></RouterLink> {{ provider.provider_type }}</p>
                 <br>
-                <p>{{ provider.address_1 }}</p> 
-                <p>{{ provider.city }} {{ provider.state }} {{ provider.zipCode}}</p>
+                <p>{{ provider.address_1.toLowerCase() }}</p> 
+                <p>{{ provider.city.toLowerCase() }} {{ provider.state }} {{ provider.zipCode}}</p>
                 <br>
                 <p>{{ provider.telephone_number }}</p>
             </div>

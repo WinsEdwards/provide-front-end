@@ -5,10 +5,10 @@ import ProviderList from '../components/ProviderList.vue'
 </script>
 
 <template>
-  <main>
-    <h1>Select a provider from the list below!</h1>
-    <SearchBar key="providersList"></SearchBar>
-    <ProviderList></ProviderList>
+  <main class="provider-database-list-container">
+    <img class="provider-view-img" src="../assets/images/select-a-provider.png">
+    <!-- <SearchBar key="providersList" class="providers-list-view search-view-search-bar"></SearchBar> -->
+    <ProviderList ></ProviderList>
     
   </main>
 </template>

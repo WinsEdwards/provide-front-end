@@ -19,6 +19,9 @@ const maz_info = {
 
 <template>
   <div class="about-us-container">
+    <div class="about-us-img-container">
+      <img class="about-us-img" src="../assets/images/about-us-yellow.png" alt="big, dark green bubble letter text that says about us">
+    </div>
     <div class="winslow">
       <div class="about-us-child-1">
         <img alt="photo of team member"
@@ -27,8 +30,7 @@ const maz_info = {
       </div>
       
       <div class="about-us-child-2">
-        <h2>{{ winslow_info["name"] }}</h2>
-        <h3>{{ winslow_info["pronouns"] }}</h3>
+        <img src="../assets/images/o-winslow-edwards-pronouns.png" width="700" height="100">
         <p>{{ winslow_info["bio"] }}</p>
       </div>     
     </div>
@@ -42,8 +44,7 @@ const maz_info = {
       </div>
       
       <div class="about-us-child-2">
-        <h2>{{ maz_info.name }}</h2>
-        <h3>{{ maz_info.pronouns }}</h3>
+        <img src="../assets/images/maz-weir-pronouns.png" width="350" height="100">
         <p>{{ maz_info.bio }}</p>
       </div>
     </div>

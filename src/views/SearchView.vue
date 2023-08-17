@@ -4,7 +4,9 @@ import '../assets/searchview.css'
 </script>
 
 <template>
-    <main>
+    <main class="search-view-container">
+        <!-- <img class="person-searching" src="../assets/images/A non-binary person using a laptop at work.jpg"> -->
+        <img class="search-view-img" src="../assets/images/find-a-provider-yellow.png">
         <SearchBar class="search-view-search-bar" key="searchPage"></SearchBar>
     </main>
 </template>

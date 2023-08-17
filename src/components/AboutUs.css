@@ -11,6 +11,28 @@
     /* border: solid; */
 }
 
+.about-us-container .about-us-img {
+    width: 45vw;
+    height: 15vw;
+    float: center;
+    margin: auto;
+    margin-bottom: 2%;
+    padding-bottom: 0;
+    border-radius: 25px;
+}
+
+.about-us-container .about-us-img-container {
+    float: center;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 2%;
+    border-radius: 25px;
+    background-color: #f6BD60;
+    padding-bottom: 0;
+}
+
+
 .winslow {
     display: flex;
     width: 100%;
@@ -43,4 +65,9 @@
     align-self: center;
     background-color: #f6BD60;
     /* border: solid goldenrod; */
+}
+
+.about-us-child-2 img {
+    margin-top: 0;
+    padding: 0;
 }

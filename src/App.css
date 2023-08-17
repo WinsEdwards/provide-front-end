@@ -6,6 +6,7 @@
   max-height: 100%;
 }
 
+
 body {
   margin: 0px;
   background-color: #F5CAC3;
@@ -77,6 +78,7 @@ header {
     /* Add any other styling you want for the navigation ribbon */
   }
 
+
   form input {
     border-radius: 20px;
     text-align: center;
@@ -85,10 +87,34 @@ header {
   @media (max-width: 960px) {
     nav ul     { font-size: smaller; }
     .home-view-img {display: none;}
-    .home-view-container .everyone-deserves img {width: ; 
-    ; }
+    /* .home-view-container .everyone-deserves img {width: ; 
+    ; } */
     .everyone-deserves .search-bar-container {
         align-items: flex-start;
     }
     .search-form-container {width: 20%;}
   }
+
+  .button-33 {
+    background-color: rgb(245, 202, 195);
+    border-radius: 100vw;
+    box-shadow: rgba(245, 202, 195, .2) 0 -25px 18px -14px inset,rgba(245, 202, 195, .15) 0 1px 2px,rgba(245, 202, 195, .15) 0 2px 4px,rgba(245, 202, 195, .15) 0 4px 8px,rgba(245, 202, 195, .15) 0 8px 16px,rgba(245, 202, 195, .15) 0 16px 32px;
+    color: #3c534d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 1vw;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    }
+
+.button-33:hover {
+    box-shadow: rgba(242,132,130, .2) 0 -25px 18px -14px inset,rgba(242,132,130, .15) 0 1px 2px,rgba(242,132,130, .15) 0 2px 4px,rgba(242,132,130, .15) 0 4px 8px,rgba(242,132,130, .15) 0 8px 16px,rgba(242,132,130, .15) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+    }

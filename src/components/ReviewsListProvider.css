@@ -35,8 +35,10 @@
     box-sizing: border-box;
 }
 
-.like-button {
+.like-button button{
     justify-content: center;
+    border: none !important;
+    background-color: #F6BD60 !important;
 }
 
 ul {

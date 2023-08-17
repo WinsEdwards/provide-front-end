@@ -8,7 +8,8 @@
 }
 
 .registration-form-container img {
-    margin-top: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
     height: 150px;
     width: 400px;
 }
@@ -25,7 +26,7 @@
     max-width: 50%;
     margin-left: auto;
     margin-right: auto; 
-    margin-top: 50px;
+    margin-top: 8vw;
     padding-bottom: 10px;
     border-radius: 25px;
     width: 500px;
@@ -34,6 +35,7 @@
 
 .registration-form-container button {
     margin-top: 10px;
+    color: #3c534d;
 }
 
 .registration-form-container .register {
