@@ -3,7 +3,6 @@ import { store } from '../store';
 import { RouterLink, useRouter} from 'vue-router'
 import '../assets/home.css'
 import '../assets/searchbar.css'
-import '../assets/searchview.css'
 
 const router = useRouter()
 const searchData = {

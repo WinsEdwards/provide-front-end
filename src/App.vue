@@ -1,18 +1,20 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
 import { store } from './store'
 import './App.css'
 
-
+const router = useRouter()
 // functions
-
+const handleClick = () => {
+router.push('/')
+}
 
 </script>
 
 <template>
   <header>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <RouterLink to="/"><img alt="Provide logo" class="logo" src="@/assets/images/provide_header_no_bg.png" width="135" height="45" /> </RouterLink>
+    <img alt="Provide logo" class="logo" @click="handleClick()" src="@/assets/images/provide_header_no_bg.png" width="135" height="45" />
     <div></div>
     <div class="wrapper">
       <nav>

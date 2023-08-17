@@ -78,6 +78,9 @@ header {
     /* Add any other styling you want for the navigation ribbon */
   }
 
+  nav .logo-button:hover {
+    background-color: none !important;
+  }
 
   form input {
     border-radius: 20px;

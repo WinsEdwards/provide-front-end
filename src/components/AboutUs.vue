@@ -19,39 +19,50 @@ const maz_info = {
 
 <template>
   <div class="provide-explanation">
-    <h2>Why Provide?</h2>
-    <h4>We created Provide because we know how hard it can be to locate health care providers who create a safe and affirming environment for LGBTQIA2S+ folks. When we say LGBTQIA2S+, we mean:</h4> 
-    <ul>
-      <li>lesbian</li>
-      <li>gay</li>
-      <li>bisexual</li>
-      <li>transgender</li>
-      <li>queer + questioning</li>
-      <li>intersex</li>
-      <li>asexual</li>
-      <li>Two-spirit</li>
-      <li>+ infinite ✨magical✨ expressions of diverse genders and sexualities</li>
-    </ul>
-    <br>
-    <h4>Provide allows you to search and review any provider with an NPI (National Provider Identification) number, which includes any health care provider who is covered by HIPAA (the Health Insurance Portability and Accountability Act) and bills federally funded programs for health services. Basically, any health care provider who bills any kind of health insurance (including Medicare and Medicaid) will have an NPI number, including:</h4>
-    <ul>
-      <li>doctors</li>
-      <li>physician assistants</li>
-      <li>nurse practitioners</li>
-      <li>physical and occupational therapists</li>
-      <li>dentists</li>
-      <li>optometrists</li>
-      <li>social workers, counselors and therapists</li>
-      <li>psychiatrists</li>
-      <li>and more!</li>
-    </ul>
+
+    <div class="why-provide-img-container">
+      <img src="../assets/images/why-provide-pink-checker.png">
+    </div>
     
+    <div class="lgbtq-explanation">
+      <h4>We created Provide because we know how hard it can be to locate health care providers who create a safe and affirming environment for LGBTQIA2S+ folks. When we say LGBTQIA2S+, we mean:</h4> 
+      <ul>
+        <li>lesbian</li>
+        <li>gay</li>
+        <li>bisexual</li>
+        <li>transgender</li>
+        <li>queer + questioning</li>
+        <li>intersex</li>
+        <li>asexual</li>
+        <li>Two-spirit</li>
+        <li>+ infinite ✨magical✨ expressions of diverse genders and sexualities</li>
+      </ul>
+    </div>
+    
+    <div class="what-provide-is">
+      <h4>Provide allows you to search and review any provider with an NPI (National Provider Identification) number, which includes any health care provider who is covered by HIPAA (the Health Insurance Portability and Accountability Act) and bills federally funded programs for health services. Basically, any health care provider who bills any kind of health insurance (including Medicare and Medicaid) will have an NPI number, including:</h4>
+      <ul>
+        <li>doctors</li>
+        <li>physician assistants</li>
+        <li>nurse practitioners</li>
+        <li>physical and occupational therapists</li>
+        <li>dentists</li>
+        <li>optometrists</li>
+        <li>social workers, counselors and therapists</li>
+        <li>psychiatrists</li>
+        <li>and more!</li>
+      </ul>
+    </div>
   </div>
+
   <div class="about-us-container">
+
     <div class="about-us-img-container">
       <img class="about-us-img" src="../assets/images/about-us-yellow.png" alt="big, dark green bubble letter text that says about us">
     </div>
+
     <div class="winslow">
+
       <div class="about-us-child-1">
         <img alt="photo of team member"
         src="../assets/images/winslow.jpg"
@@ -61,11 +72,14 @@ const maz_info = {
       <div class="about-us-child-2">
         <img src="../assets/images/o-winslow-edwards-pronouns.png" width="700" height="100">
         <p>{{ winslow_info["bio"] }}</p>
-      </div>     
+      </div>  
+
     </div>
   </div>
+
   <div class="about-us-container">
     <div class="maz">
+
       <div class="about-us-child-1">
         <img alt="photo of team member"
         src="../assets/images/maz.jpg"
@@ -76,8 +90,10 @@ const maz_info = {
         <img src="../assets/images/maz-weir-pronouns.png" width="350" height="100">
         <p>{{ maz_info.bio }}</p>
       </div>
+
     </div>
 </div>
+
 </template>
 
 

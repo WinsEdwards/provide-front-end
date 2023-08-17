@@ -1,6 +1,6 @@
 <script setup>
 import SearchBar from '../components/SearchBar.vue'
-import '../assets/searchview.css'
+import '../assets/searchbar.css'
 </script>
 
 <template>
