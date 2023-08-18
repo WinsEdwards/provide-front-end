@@ -1,1 +1,0 @@
-import{o as e,c as s,d as a,a as c,_ as r}from"./index-d606819d.js";const o="/assets/find-a-provider-yellow-f998096b.png",t={class:"search-view-container"},n=c("img",{class:"search-view-img",src:o},null,-1),h={__name:"SearchView",setup(_){return(i,l)=>(e(),s("main",t,[n,a(r,{class:"search-view-search-bar",key:"searchPage"})]))}};export{h as default};
