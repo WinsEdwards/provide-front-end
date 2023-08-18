@@ -37,13 +37,15 @@ export const store = reactive({
             misgender: [],
             bathrooms: []
         },
+    // avg_rating: [],
     
     
     // statistics to go with provider reviews
     // calcSummaryStats() {
-    //     // if (this.providerReviews.length > 0) {
-    //     //     this.providerReviews.forEach(function(value,index) {
-    //     //         // store.summaryStats.rating.push(value["rating"]),
+    //     if (this.providerReviews.length > 0) {
+    //         this.providerReviews.forEach(function(value,index) {
+    //             store.avg_rating.rating.push(value["rating"])
+    //             console.log(store.avg_rating)
     //     //         store.summaryStats["emoji_rating"].push(value["emoji_rating"]),
     //     //         store.summaryStats["recommended"].push(value["recommended"]),
     //     //         store.summaryStats["usercomfort"].push(value["usercomfort"]),
