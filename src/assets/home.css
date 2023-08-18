@@ -103,6 +103,8 @@
 }
 
 .lgbtq-explanation ul {
+    list-style: none;
+    margin-left: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -129,6 +131,8 @@
 }
 
 .what-provide-is ul {
+    list-style: none;
+    margin-left: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
