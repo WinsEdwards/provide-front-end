@@ -24,6 +24,7 @@ var submitted = ref(false)
 const handleSubmit = () => {
     console.log("submitting review")
     store.createReview(reviewData)
+    console.log("review submitted")    
 }
 
 </script>
@@ -31,7 +32,7 @@ const handleSubmit = () => {
 <template>
 
     <div class="review-form-container">
-        <form class="review-form" @submit.prevent="handleSubmit(),(submitted = true)">
+        <form class="review-form" @submit.prevent="(!submitted ? handleSubmit():console.log(submitted)),(submitted = true)">
             <h3>Leave a review for {{ store.currentProvider["first_name"] }} {{ store.currentProvider["last_name"] }}, {{ store.currentProvider["licenses"] }}:</h3>
             
             <br>
@@ -42,16 +43,28 @@ const handleSubmit = () => {
             </div>
 
             <br>
-
-            <div>
-                <label for="rating">Rating: </label>
-                <select id="rating" v-model.number="reviewData.rating" required>
-                    <option value=5>5 🌟s</option>
-                    <option value=4>4 🌟s</option>
-                    <option value=3>3 🌟s</option>
-                    <option value=2>2 🌟s</option>
-                    <option value=1>1 🌟</option>
-                </select>
+            <div class="rating-container">
+                <div>Rating:</div>
+                <div class="rate">
+                    <!-- <label for="rating">Rating: </label>
+                    <select id="rating" v-model.number="reviewData.rating" required>
+                        <option value=5>5 🌟s</option>
+                        <option value=4>4 🌟s</option>
+                        <option value=3>3 🌟s</option>
+                        <option value=2>2 🌟s</option>
+                        <option value=1>1 🌟</option>
+                    </select> -->
+                    <input type="radio" id="star5" name="rate" value=5 v-model.number="reviewData.rating" required />
+                    <label for="star5" title="5 stars">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value=4 v-model.number="reviewData.rating" required />
+                    <label for="star4" title="4 stars">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value=3 v-model.number="reviewData.rating" required />
+                    <label for="star3" title="3 stars">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value=2 v-model.number="reviewData.rating" required />
+                    <label for="star2" title="2 stars">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value=1 v-model.number="reviewData.rating" required />
+                    <label for="star1" title="1 star">1 star</label>
+                </div>
             </div>
 
             <br>

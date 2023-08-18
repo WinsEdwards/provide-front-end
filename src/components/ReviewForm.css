@@ -6,9 +6,59 @@
     line-height: 2;
 }
 
-.review-form-container form input{
-    border-radius: 65px;
+.rating-container {
+    display: flex;
+    align-items: center;
 }
+
+.rate {
+    float: left;
+    padding: 0 10px;
+}
+
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+
+.rate:not(:checked) >label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+
+.rate > input:checked + label:hover,
+
+.rate > input:checked + label:hover ~ label,
+
+.rate > input:checked ~ label:hover,
+
+.rate > input:checked ~ label:hover ~ label,
+
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.review-form-container form textarea{
+    width: 200px
+}
+
 .review-form-container form {
     justify-content: center;
     align-content: center;
@@ -26,6 +76,10 @@
     padding-left: 1em;
     border-radius: 65px;
     border: bevel 1px;
+}
+
+.review-form-container select {
+    font-size: large;
 }
 
 .review-and-ratings {
