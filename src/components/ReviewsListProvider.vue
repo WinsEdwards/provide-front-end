@@ -60,9 +60,9 @@ const handleClick = (reviewData) => {
                     Recommend to a friend?
                     {{ review.recommended ? 'Yes' : 'No' }}
                     <br>
-                    Review ID:
+                    <!-- Review ID:
                     {{ review.review_id }}
-                    <br>
+                    <br> -->
                     <!-- liked button -->
                     <div class="like-button" v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="store.currentUser.liked_reviews.includes(review.review_id) ">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
                     </div>
