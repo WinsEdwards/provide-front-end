@@ -6,6 +6,7 @@ import '../assets/providerlist.css'
 onMounted(() => store.getProvidersList());
 const handleClick = (provider) => {
     store.currentProvider = provider
+    console.log(store.currentProvidersListFromDatabase)
 }
 </script>
 
@@ -16,7 +17,8 @@ const handleClick = (provider) => {
             <p>{{ provider.provider_type }} {{ provider.licenses }}</p>
             <br>
             <p>{{ provider.address_1 }}</p>
-            <p>{{ provider.city }} {{ provider.state }}</p>
+            <p>{{ provider.city }}, {{ provider.state }}</p>
+            <p>{{ provider.postal_code }}</p>
             <br>
             <p>{{ provider.telephone_number }}</p>
         </div>

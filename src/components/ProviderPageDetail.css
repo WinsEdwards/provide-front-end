@@ -3,4 +3,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #F6BD60;
+}
+
+.provider-reviews-container {
+    display: flex;
+    justify-content: center;
+}
+
+.provider-details-info {
+    text-align: center;
+    background-color: #F28482;
+    padding: 20px;
+    margin-bottom: 2%;
+    border-radius: 65px;
+}
+
+.no-reviews-message {
+    margin-top: 10%;
+    background-color: #F6BD60;
+    border-radius: 65px;
+    padding: 10px;
 }

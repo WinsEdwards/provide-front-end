@@ -13,6 +13,17 @@ const handleClick = (reviewData) => {
     store.toggleLike(reviewData)
 }
 
+const isLiked = (reviewData) => {
+    store.getUpdatedUser()
+    if (store.currentUser.liked_reviews.length) {
+        if (store.currentUser.liked_reviews.includes(reviewData.review_id)) {
+            return true
+        }
+    return false
+    }
+
+}
+
 
 // renaming keys so things print pretty on page
 // const subKeyForQuest = () => {
@@ -64,13 +75,13 @@ const handleClick = (reviewData) => {
                     {{ review.review_id }}
                     <br> -->
                     <!-- liked button -->
-                    <div class="like-button" v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="store.currentUser.liked_reviews.includes(review.review_id) ">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
+                    <div class="like-button" v-if="store.isLoggedIn"><button type="button" class="ReviewLikeCount" @click="handleClick(review)"><div v-if="isLiked(review)">❤️</div><div v-else>🤍</div></button>{{ review.liked_count }}</div>
                     </div>
             </div>
 
         </div>
 
-        <div v-else>There are no reviews for this provider. Be the first to leave one!</div>
+        <div class="no-reviews-message" v-else>There are no reviews for this provider. Be the first to leave one!</div>
 
     </div>
 </template>
