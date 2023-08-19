@@ -33,6 +33,7 @@ const maz_info = {
         <li>transphobia and cissexism</li>
         <li>transmisogyny and transmysogynoir</li>
         <li>homophobia and heteronormativity</li>
+        <li>HIV status</li>
         <li>sizeism and fatphobia</li>
         <li>ableism and ageism</li>
         <li>citizenship status</li>

@@ -16,3 +16,9 @@
 16) Integrate google map API
 17) Homepage review carousel
 18) Highly rated providers near you
+19) Demographics as part of registration process, so we can at base track who is using the app/who the app is reaching and who the app is not reaching. Ideally should include age, saab, gender, sexuality, race/ethnicity, possibly HIV status (this is optional, if they care to share), possibly also SES and region of country (i.e. south, northeast, midwest)
+20) Loading time of reviews and providers?
+21) Add loading page on login
+22) Error message if search does not return provider
+23) Accessibility - is site accessible? Especially forms
+24) Feedback form so users can provide feedback and recommendations to us
